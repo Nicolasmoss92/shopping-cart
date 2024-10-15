@@ -1,14 +1,27 @@
-import { Container, HeaderContainer } from "./header.styles";
+import { Container, HeaderContainer } from "./styles";
 import { FaShoppingCart } from 'react-icons/fa';
 
 const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <Container>
-        <h1>RocketShoes</h1>
+        <div className="logo">
+          <img
+            src="/ROCKETSHOES.jpg"
+            alt="RocketShoes"
+            width={150}
+            height={50}
+          />
+          <img
+            src="/noun_Running_1473810.jpg"
+            alt="RocketShoes"
+            width={30}
+            height={30}
+          />
+        </div>
         <div>
           <span>Meu carrinho</span>
-          <FaShoppingCart size={24} /> {/* Ícone do carrinho */}
+          <FaShoppingCart size={24} />
         </div>
       </Container>
     </HeaderContainer>
