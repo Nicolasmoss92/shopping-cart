@@ -23,28 +23,22 @@ export const Container = styled.div`
   }
 `;
 
-export const Cart = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
+export const CartText = styled.div`
+  margin-right: 8px;
+  text-align: right;
 
   span {
-    font-size: 14px;
-  }
+    display: block;
+    font-size: 12px;
 
-  div {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    span {
-      font-size: 12px;
-      color: #999;
+    &:first-child {
+      font-weight: bold;
+    }
+    &:last-child {
+      color: #888;
     }
   }
 `;
-
 export const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -59,4 +53,31 @@ export const Logo = styled.div`
   img {
     margin: 0;
   }
+`;
+
+export const CartContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const CartInfo = styled.div`
+  margin-right: 8px;
+  text-align: right;
+
+  span {
+    display: block;
+    font-size: 12px;
+
+    &:first-child {
+      font-weight: bold;
+    }
+    &:last-child {
+      color: #888;
+    }
+  }
+`
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Para centralizar, se necessário */
 `;
