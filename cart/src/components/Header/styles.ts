@@ -16,7 +16,7 @@ export const Container = styled.div`
 
   @media (max-width: 768px) { /* Ajustes para telas menores */
     gap: 15px; /* Reduz o espaço em telas pequenas */
-  }
+  } 
 
   @media (max-width: 480px) { /* Ajustes para dispositivos móveis */
     gap: 10px; /* Reduz ainda mais o espaço em telas muito pequenas */
@@ -39,6 +39,7 @@ export const CartText = styled.div`
     }
   }
 `;
+
 export const Logo = styled.div`
   display: flex;
   align-items: center;

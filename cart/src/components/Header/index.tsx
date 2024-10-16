@@ -1,4 +1,4 @@
-import { CartContainer, CartInfo, CartText, Container, HeaderContainer, LogoContainer } from "./styles";
+import { CartContainer, CartInfo, Container, HeaderContainer, LogoContainer } from "./styles";
 import { FaShoppingCart } from 'react-icons/fa';
 
 const Header: React.FC = () => {
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
             <span>Meu carrinho</span>
             <span>3 itens</span>
           </CartInfo>
-          <FaShoppingCart size={24} />
+          <FaShoppingCart size={24}  data-testid="shopping-cart-icon" />
         </CartContainer>
       </Container>
     </HeaderContainer>
