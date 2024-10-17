@@ -1,10 +1,11 @@
-import Card from "./components/card";
+import Card from "./components/layout/card/Card";
 import Header from "./components/Header/index";
+import SubHeader from "./components/layout/checkOut/Header";
 
 function App() {
   return (
     <div className="App">  
-      <Card />
+      <SubHeader />
     </div>
   );
 }
