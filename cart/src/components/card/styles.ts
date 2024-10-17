@@ -6,40 +6,43 @@ export const ProductCard = styled.div`
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 250px;  /* Largura do card ajustada */
-  margin-left: 255px; /* Posição fixa à esquerda */
-  margin-top: 30px;
+  max-height: 442px;
+  max-width: 300px;
+  margin-top: 100px;
+  margin-left: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    margin-left: auto; /* Em telas menores, centraliza o card */
+    margin-left: auto;
     margin-right: auto;
-    max-width: 100%; /* Card ocupa 100% da largura da tela em dispositivos móveis */
+    max-width: 100%; 
     margin-top: 20px;
   }
 `;
 
 export const ProductImage = styled.img`
-  max-width: 100%;
+  max-width: 260px;
+  max-height: 260px;
   border-radius: 4px;
-  margin-bottom: 16px; /* Espaço entre a imagem e o nome do produto */
+  margin-bottom: 16px; 
 `;
 
 export const ProductName = styled.h3`
-  font-size: 14px; /* Fonte menor para se ajustar ao card */
+  font-size: 16px; 
   margin: 8px 0;
   color: #333;
-  text-align: left; /* Alinhamento à esquerda */
+  text-align: left; 
 `;
 
 export const ProductPrice = styled.p`
-  font-size: 16px;
+  font-size: 21px;
   font-weight: bold;
   margin-bottom: 8px;
   color: #000;
-  text-align: left; /* Alinhamento à esquerda */
+  text-align: left;
+  margin-top: 0px 
 `;
 
 export const AddToCartButton = styled.button`
@@ -54,7 +57,7 @@ export const AddToCartButton = styled.button`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 100%;  /* O botão ocupa a largura total do card */
+  width: 100%; 
 
   &:hover {
     background-color: #5a47a3;
@@ -63,5 +66,5 @@ export const AddToCartButton = styled.button`
 
 export const CartIcon = styled.span`
   font-size: 16px;
-  margin-right: 4px; /* Espaço entre o ícone e o texto */
+  margin-right: 4px;
 `;
