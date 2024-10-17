@@ -1,83 +1,41 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: #3b82f6;
-  color: white;
-  padding: 16px;
+  background-color: #1a1a1a;
+  padding: 20px 0;
 `;
 
-export const Container = styled.div`
+export const HeaderContent = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 800px; 
-
-  @media (max-width: 768px) { /* Ajustes para telas menores */
-    gap: 15px; /* Reduz o espaço em telas pequenas */
-  }
-
-  @media (max-width: 480px) { /* Ajustes para dispositivos móveis */
-    gap: 10px; /* Reduz ainda mais o espaço em telas muito pequenas */
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 `;
 
-export const CartText = styled.div`
-  margin-right: 8px;
-  text-align: right;
-
-  span {
-    display: block;
-    font-size: 12px;
-
-    &:first-child {
-      font-weight: bold;
-    }
-    &:last-child {
-      color: #888;
-    }
-  }
-`;
 export const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Espaço entre texto e imagem */
-  
-  span {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-  }
-  
+  display: flex; /* Para alinhar as imagens horizontalmente */
+  align-items: center; /* Centraliza verticalmente as imagens */
+
   img {
-    margin: 0;
+    height: 30px;
+    margin-right: 10px; /* Espaço entre as imagens */
+  }
+
+  img:last-child {
+    margin-right: 0; /* Remove o espaço da última imagem */
   }
 `;
 
-export const CartContainer = styled.div`
+
+export const Cart = styled.div`
   display: flex;
   align-items: center;
-`;
+  color: #fff;
 
-export const CartInfo = styled.div`
-  margin-right: 8px;
-  text-align: right;
-
-  span {
-    display: block;
-    font-size: 12px;
-
-    &:first-child {
-      font-weight: bold;
-    }
-    &:last-child {
-      color: #888;
-    }
+  img {
+    height: 24px;
+    margin-left: 10px;
   }
-`
-export const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Para centralizar, se necessário */
 `;
