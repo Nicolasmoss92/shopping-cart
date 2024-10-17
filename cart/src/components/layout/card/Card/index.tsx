@@ -1,5 +1,5 @@
 import CartButton from "../CardButton";
-import { AddToCartButton, CartIcon, ProductCard, ProductImage, ProductName, ProductPrice} from "./styles";
+import { ProductCard, ProductImage, ProductName, ProductPrice} from "./styles";
 
 const Cart: React.FC = () => {
   return (
