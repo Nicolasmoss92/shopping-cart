@@ -5,9 +5,11 @@ export const ProductWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between; // Alinha os itens no espaço disponível
-  padding: 10px;
+  padding: 20px 0;
   border: 1px solid #ccc;
   border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
   margin-bottom: 10px;
   width: 100%; // Garante que o item ocupe 100% da largura disponível
   box-sizing: border-box; // Inclui padding e border na largura total

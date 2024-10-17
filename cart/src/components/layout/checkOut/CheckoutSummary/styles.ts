@@ -4,7 +4,9 @@ export const SummaryWrapper = styled.div`
   display: flex;
   justify-content: space-between; // Alinha o total e o botão
   align-items: center; // Centraliza verticalmente
-  padding: 20px;
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
   background-color: #f9f9f9; // Cor de fundo
   border-radius: 8px; // Bordas arredondadas
   margin-top: 20px; // Espaçamento superior
