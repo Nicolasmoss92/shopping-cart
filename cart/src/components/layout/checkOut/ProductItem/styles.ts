@@ -47,4 +47,3 @@ export const QuantityControl = styled.div`
   margin: 0 10px; // Espaçamento entre os componentes
 `;
 
-// Adicione outros estilos conforme necessário
