@@ -4,11 +4,12 @@ import SubHeader from "./components/layout/checkOut/Header";
 import ProductItem from "./components/layout/checkOut/ProductItem";
 import CheckoutSummary from "./components/layout/checkOut/CheckoutSummary";
 import CheckoutPage from "./pages/CheckOutPage";
+import ListItensPage from "./pages/ListItensPage";
 
 function App() {
   return (
     <div className="App">  
-      <CheckoutPage />
+      <ListItensPage />
     </div>
   );
 }
