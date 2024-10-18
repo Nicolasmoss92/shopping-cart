@@ -8,8 +8,8 @@ export const ProductCard = styled.div`
   text-align: center;
   max-height: 442px;
   max-width: 300px;
-  margin-top: 100px;
-  margin-left: 500px;
+  margin-top: 100px; /* Distância do topo */
+  margin-left: 20px; /* Distância da esquerda */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,8 +17,8 @@ export const ProductCard = styled.div`
   @media (max-width: 768px) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%; 
-    margin-top: 20px;
+    max-width: 100%;
+    margin-top: 22px;
   }
 `;
 
