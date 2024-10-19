@@ -1,7 +1,7 @@
 import CartButton from "../CardButton";
 import { ProductCard, ProductImage, ProductName, ProductPrice} from "./styles";
 
-const Cart: React.FC = () => {
+const Card: React.FC = () => {
   return (
     <div>
       <ProductCard>
@@ -14,4 +14,4 @@ const Cart: React.FC = () => {
   );
 };
 
-export default Cart;
+export default Card;

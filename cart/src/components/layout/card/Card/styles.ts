@@ -4,7 +4,6 @@ export const ProductCard = styled.div`
   background-color: white;
   border-radius: 8px;
   padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   max-height: 442px;
   max-width: 300px;
@@ -13,6 +12,7 @@ export const ProductCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 4px;
 
   @media (max-width: 768px) {
     margin-left: auto;

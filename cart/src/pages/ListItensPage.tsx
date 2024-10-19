@@ -5,28 +5,28 @@ import CheckoutSummary from "../components/layout/checkOut/CheckoutSummary";
 import SubHeader from "../components/layout/checkOut/Header";
 import ProductItem from "../components/layout/checkOut/ProductItem";
 import { ProductWrapper, QuantityControl } from "../components/layout/checkOut/ProductItem/styles";
-import { CardGrid, MainContainer } from "../styles/globalStyles";
+import { CardGrid, MainContainer, PageWrapper } from "../styles/globalStyles";
 
 const CardGridPage: React.FC = () => {
-    return (
-        <div>
-            <Header />
-            <MainContainer>
-                <CardGrid>
-                    <Cart />
-                    <Cart />
-                    <Cart />
-                    <Cart />
-                    <Cart />
-                    <Cart />
-                    <Cart />
-                    <Cart />
-                    <Cart />
-                    
-                </CardGrid>
-            </MainContainer>
-        </div>
-    );
+  return (
+    <PageWrapper>
+      <Header />
+      <MainContainer>
+        <CardGrid>
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+          <Cart />
+
+        </CardGrid>
+      </MainContainer>
+    </PageWrapper>
+  );
 };
 
 export default CardGridPage;
