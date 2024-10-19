@@ -9,7 +9,7 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1075px;
   margin: 0 auto;
   padding: 0 20px;
 `;
@@ -20,7 +20,7 @@ export const Logo = styled.div`
 
   img {
     height: 30px;
-    margin-right: 10px; /* Espaço entre as imagens */
+    margin-right: 0px; /* Espaço entre as imagens */
   }
 
   img:last-child {

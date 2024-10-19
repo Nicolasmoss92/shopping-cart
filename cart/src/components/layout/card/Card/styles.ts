@@ -8,7 +8,7 @@ export const ProductCard = styled.div`
   text-align: center;
   max-height: 442px;
   max-width: 300px;
-  margin-top: 100px; /* Distância do topo */
+  margin-top: 0px; /* Distância do topo */
   margin-left: 20px; /* Distância da esquerda */
   display: flex;
   flex-direction: column;
