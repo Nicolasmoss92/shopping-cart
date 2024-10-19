@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 // Body (Amarelo) - container principal
 export const MainContainer = styled.main`
-  background-color: #f5f5f5; /* Cor de fundo para o body */
+  background-color: black; /* Cor de fundo para o body */
   padding: 20px;
   min-height: 100vh;
   display: flex;
@@ -17,6 +17,7 @@ export const MainContainer = styled.main`
 
 // CardGrid - Grid responsivo para os cards
 export const CardGrid = styled.div`
+  background-color: black; /* Cor de fundo para o body */
   display: flex;
   flex-wrap: wrap; /* Permite que os cards quebrem linha */
   justify-content: flex-start;
@@ -34,4 +35,8 @@ export const CardGrid = styled.div`
   @media (max-width: 768px) {
     justify-content: center; /* Centraliza os cards em telas menores */
   }
+`;
+export const PageWrapper = styled.div`
+  background-color: black; /* Cor de fundo preta */
+  min-height: 100vh; /* Para cobrir toda a altura da página */
 `;

@@ -15,21 +15,19 @@ export const HeaderContent = styled.div`
 `;
 
 export const Logo = styled.div`
-  display: flex; /* Para alinhar as imagens horizontalmente */
-  align-items: center; /* Centraliza verticalmente as imagens */
+  display: flex; /* Alinhamento horizontal das imagens */
+  align-items: center; /* Alinhamento vertical */
 
   img {
     height: 30px;
-    margin-right: 0px; /* Espaço entre as imagens */
-  }
 
-  img:last-child {
-    margin-right: 0; /* Remove o espaço da última imagem */
+    &:not(:last-child) {
+      margin-right: 10px; /* Aplica margem apenas para não ser o último item */
+    }
   }
 `;
 
-
-export const Cart = styled.div`
+export const CardStyle = styled.div`
   display: flex;
   align-items: center;
   color: #fff;
