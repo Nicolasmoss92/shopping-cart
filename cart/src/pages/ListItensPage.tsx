@@ -16,6 +16,13 @@ const CardGridPage: React.FC = () => {
                     <Cart />
                     <Cart />
                     <Cart />
+                    <Cart />
+                    <Cart />
+                    <Cart />
+                    <Cart />
+                    <Cart />
+                    <Cart />
+                    
                 </CardGrid>
             </MainContainer>
         </div>

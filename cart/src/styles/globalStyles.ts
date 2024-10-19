@@ -7,18 +7,31 @@ export const MainContainer = styled.main`
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Alinha ao topo */
+  width: 100%; /* Garante que ocupe toda a largura da tela */
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto; /* Centraliza o container */
+  box-sizing: border-box; /* Inclui padding na largura total */
 `;
 
+
+// CardGrid - Grid responsivo para os cards
 export const CardGrid = styled.div`
-  display: flex; /* Usando flexbox para melhor controle */
-  justify-content: flex-start; /* Alinha os itens à esquerda */
-  align-items: flex-start; /* Alinha os itens no topo */
-  width: 100vw; /* Largura total da tela */
-  height: 100vh; /* Altura total da tela */
-  background-color: #1a1a1a; /* Cor de fundo */
-  padding: 20px; /* Espaçamento interno */
-  box-sizing: border-box; /* Inclui o padding na largura e altura total */
-`;;
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem linha */
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 0px;
+
+  /* Para telas grandes */
+  @media (min-width: 1024px) {
+    justify-content: space-between; /* Distribui os cards de forma uniforme */
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center; /* Centraliza os cards em telas menores */
+  }
+`;
