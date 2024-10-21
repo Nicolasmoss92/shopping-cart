@@ -2,15 +2,17 @@ import styled from 'styled-components';
 
 export const SummaryWrapper = styled.div`
   display: flex;
-  justify-content: space-between; // Alinha o total e o botão
-  align-items: center; // Centraliza verticalmente
-  padding: 20px 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #f9f9f9; // Cor de fundo
-  border-radius: 8px; // Bordas arredondadas
-  margin-top: 20px; // Espaçamento superior
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 96%; /* Garante que o contêiner ocupe toda a largura disponível */
+  max-width: 1100px; /* Máximo de largura para garantir uma boa visualização */
+  margin: 0 auto; /* Centraliza o contêiner */
+  background-color: yellow;
+  border-radius: 8px;
+  margin-top: -10px;
 `;
+
 
 export const TotalText = styled.span`
   font-size: 24px; // Tamanho do texto total

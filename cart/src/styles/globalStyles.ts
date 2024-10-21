@@ -1,7 +1,21 @@
 import styled from 'styled-components';
 
 // Body (Amarelo) - container principal
-export const MainContainer = styled.main`
+export const MainContainerItensPage = styled.main`
+  background-color: white; /* Cor de fundo para o body */
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Alinha itens verticalmente */
+  justify-content: flex-start; /* Alinha ao topo */
+  width: 100%; /* Garante que ocupe toda a largura da tela */
+  max-width: 1080px;
+  margin: 0 auto; /* Centraliza o container */
+  box-sizing: border-box; /* Inclui padding na largura total */
+`;
+
+// Body (Amarelo) - container principal
+export const MainContainerCheckOutPage = styled.main`
   background-color: black; /* Cor de fundo para o body */
   padding: 20px;
   min-height: 100vh;
@@ -13,7 +27,6 @@ export const MainContainer = styled.main`
   margin: 0 auto; /* Centraliza o container */
   box-sizing: border-box; /* Inclui padding na largura total */
 `;
-
 
 // CardGrid - Grid responsivo para os cards
 export const CardGrid = styled.div`
