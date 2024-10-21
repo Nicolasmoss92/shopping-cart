@@ -9,7 +9,7 @@ import ListItensPage from "./pages/ListItensPage";
 function App() {
   return (
     <div className="App">  
-      <ListItensPage />
+      <CheckoutPage />
     </div>
   );
 }

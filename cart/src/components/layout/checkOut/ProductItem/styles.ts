@@ -2,23 +2,23 @@
 import styled from 'styled-components';
 
 export const ProductWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
   align-items: center;
-  justify-content: space-between; // Alinha os itens no espaço disponível
   padding: 20px 0;
   border: 1px solid #ccc;
   border-radius: 8px;
-  max-width: 1200px;
+  width: 100%;  /* Para ocupar toda a largura disponível */
+  max-width: 1400px; /* Mantenha o max-width */
   margin: 0 auto;
   margin-bottom: 10px;
-  width: 100%; // Garante que o item ocupe 100% da largura disponível
-  box-sizing: border-box; // Inclui padding e border na largura total
+  box-sizing: border-box;
 
   @media (max-width: 600px) {
-    flex-direction: column; // Altera para coluna em telas menores
-    align-items: flex-start; // Alinha os itens à esquerda
+    grid-template-columns: 1fr;
   }
 `;
+
 
 export const ProductInfo = styled.div`
   display: flex;
