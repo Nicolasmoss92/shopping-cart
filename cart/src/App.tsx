@@ -8,11 +8,12 @@ import ListItensPage from "./pages/ListItensPage";
 import Button from "./components/button/Button";
 import CardButton from "./components/layout/card/CardButton";
 import CardGridPage from "./pages/ListItensPage";
+import CheckoutButton from "./components/layout/checkOut/CheckOutButton";
 
 function App() {
   return (
     <div className="App">  
-      <CardGridPage />
+      <CheckoutPage />
     </div>
   );
 }
