@@ -13,7 +13,7 @@ import CheckoutButton from "./components/layout/checkOut/CheckOutButton";
 function App() {
   return (
     <div className="App">  
-      <CardGridPage />
+      <CheckoutPage />
     </div>
   );
 }

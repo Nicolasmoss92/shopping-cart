@@ -16,7 +16,7 @@ const CheckoutPage: React.FC = () => {
                     <ProductItem />
                     <ProductItem />
                     <ProductItem />
-                    <CheckoutButton />
+                    <CheckoutSummary />
                 </MainContainerItensPage>
             </PageWrapper>
         </div>

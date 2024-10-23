@@ -11,6 +11,7 @@ export const CheckoutButtonStyled = styled(Button)`
   padding: 10px 20px; // Espaçamento interno
   cursor: pointer; // Cursor de ponteiro ao passar o mouse
   transition: background-color 0.3s; // Transição suave
+  max-width: 200px;
 
   &:hover {
     background-color: #5639a3; // Cor ao passar o mouse
