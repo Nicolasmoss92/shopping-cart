@@ -6,6 +6,7 @@ import CheckoutSummary from "../components/layout/checkOut/CheckoutSummary";
 import SubHeader from "../components/layout/checkOut/Header";
 import ProductItem from "../components/layout/checkOut/ProductItem";
 import { ProductWrapper, QuantityControl } from "../components/layout/checkOut/ProductItem/styles";
+import { CartProvider } from "../contexts/cartContext";
 import { CardGrid, MainContainerCheckOutPage, PageWrapper } from "../styles/globalStyles";
 const products = [
   { imageUrl: '/tenis2.jpg', productName: 'Tênis 1', productPrice: 'R$100,00' },
@@ -19,6 +20,7 @@ const products = [
 
 const CardGridPage: React.FC = () => {
   return (
+    <CartProvider>
     <PageWrapper>
       <Header />
       <MainContainerCheckOutPage>
@@ -34,6 +36,7 @@ const CardGridPage: React.FC = () => {
       </CardGrid>
       </MainContainerCheckOutPage>
     </PageWrapper>
+    </CartProvider>
   );
 };
 

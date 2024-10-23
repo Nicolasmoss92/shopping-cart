@@ -30,7 +30,7 @@ export const Logo = styled.div`
 export const CardStyle = styled.div`
   display: flex;
   align-items: center;
-  color: #fff;
+  color: white;
 
   img {
     height: 24px;

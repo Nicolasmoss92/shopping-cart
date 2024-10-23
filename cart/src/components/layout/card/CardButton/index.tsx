@@ -1,11 +1,15 @@
+import { useState } from "react";
 import Button from "../../../button/Button";
-import { CartIconWrapper, Quantity } from "./styles";
+import { CartIconWrapper } from "./styles";
+import { useCart } from "../../../../contexts/cartContext";
 
 const CardButton: React.FC = () => {
+  const { increment } = useCart();  // Usando o método increment do contexto
+
   const icon = (
     <CartIconWrapper>
       <img src='./Vector.jpg' alt="Carrinho" />
-      <span>2</span>  {/* Aqui podemos ajustar para exibir a quantidade */}
+      {/* O número de itens aqui será gerenciado no Header, então não precisa exibir neste componente */}
     </CartIconWrapper>
   );
 
@@ -16,6 +20,7 @@ const CardButton: React.FC = () => {
       icon={icon}  // Passa o ícone
       primary={true}  // Define como botão primário (roxo)
       large={true}  // Define como botão grande
+      onClick={increment}  // Agora usamos o método increment do contexto
     />
   );
 };
