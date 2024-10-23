@@ -1,11 +1,18 @@
+import { useState } from "react";
 import Button from "../../../button/Button";
 import { CartIconWrapper, Quantity } from "./styles";
 
 const CardButton: React.FC = () => {
+  const [quantity, setQuantity] = useState(0);
+
+  const handleAddToCart = () => {
+    setQuantity(prevQuantity => prevQuantity + 1);
+  };
+
   const icon = (
     <CartIconWrapper>
       <img src='./Vector.jpg' alt="Carrinho" />
-      <span>2</span>  {/* Aqui podemos ajustar para exibir a quantidade */}
+      <span>{quantity}</span>  {/* Aqui podemos ajustar para exibir a quantidade */}
     </CartIconWrapper>
   );
 
@@ -16,6 +23,7 @@ const CardButton: React.FC = () => {
       icon={icon}  // Passa o ícone
       primary={true}  // Define como botão primário (roxo)
       large={true}  // Define como botão grande
+      onClick={handleAddToCart}
     />
   );
 };
