@@ -6,11 +6,14 @@ import CheckoutSummary from "./components/layout/checkOut/CheckoutSummary";
 import CheckoutPage from "./pages/CheckOutPage";
 import ListItensPage from "./pages/ListItensPage";
 import Button from "./components/button/Button";
+import CardButton from "./components/layout/card/CardButton";
+import CardGridPage from "./pages/ListItensPage";
+import CheckoutButton from "./components/layout/checkOut/CheckOutButton";
 
 function App() {
   return (
     <div className="App">  
-      <Button title="Adicionar ao Carrinho" showIcon={true} primary={true} large={true} />
+      <CheckoutPage />
     </div>
   );
 }

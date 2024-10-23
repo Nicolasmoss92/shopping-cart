@@ -1,14 +1,22 @@
+import CardButton from "../CardButton";
 import CartButton from "../CardButton";
-import { ProductCard, ProductImage, ProductName, ProductPrice} from "./styles";
+import { ProductCard, ProductImage, ProductName, ProductPrice } from "./styles";
 
-const Card: React.FC = () => {
+interface CardProps {
+  imageUrl: string;
+  productName: string;
+  productPrice: string;
+}
+
+
+const Card: React.FC<CardProps> = ({imageUrl, productName, productPrice}) => {
   return (
     <div>
       <ProductCard>
-        <ProductImage src="/tenis2.jpg" alt="Tênis de Caminhada Leve Confortável" />
-        <ProductName>Tênis de Caminhada Leve Confortável</ProductName>
-        <ProductPrice>R$179,90</ProductPrice>
-        <CartButton />
+        <ProductImage src={imageUrl} alt={productName} />
+        <ProductName>{productName}</ProductName>
+        <ProductPrice>{productPrice}</ProductPrice>
+        <CardButton />
       </ProductCard>
     </div>
   );
