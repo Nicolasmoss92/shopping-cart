@@ -1,10 +1,10 @@
 import { ButtonProps } from '../../../types/button/buttonTypes';
-import { StyledButton } from './styles';  // Importa os estilos
+import { StyledButton } from './styles'; 
 
-const Button: React.FC<ButtonProps> = ({ title, showIcon, primary, large, onClick, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ title, showIcon, primary, large, onClick, icon, ...props }) => {
   return (
     <StyledButton primary={primary} large={large} onClick={onClick} {...props}>
-      {showIcon && <span>Icon</span>}
+      {showIcon && icon}
       {title}
     </StyledButton>
   );
