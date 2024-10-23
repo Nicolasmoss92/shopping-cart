@@ -5,7 +5,7 @@ const CardButton: React.FC = () => {
   const icon = (
     <CartIconWrapper>
       <img src='./Vector.jpg' alt="Carrinho" />
-      <span>1</span>  {/* Aqui podemos ajustar para exibir a quantidade */}
+      <span>2</span>  {/* Aqui podemos ajustar para exibir a quantidade */}
     </CartIconWrapper>
   );
 
