@@ -4,7 +4,7 @@ import { CardStyle, HeaderContainer, HeaderContent, Logo } from "./styles";
 import { FaShoppingCart } from 'react-icons/fa';
 
 const Header: React.FC = () => {
-  const { quantity } = useCart(); 
+  const { totalItems } = useCart();
   
   return (
     <HeaderContainer>
@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       <CardStyle>
           <span>Meu carrinho</span>
           <FaShoppingCart size={24} data-testid="shopping-cart-icon" />
-          {quantity > 0 && <span>{quantity}</span>}  {/* Exibe a quantidade se maior que 0 */}
+          {totalItems > 0 && <span>{totalItems}</span>} {/* Exibe a contagem */}
         </CardStyle>
     </HeaderContent>
   </HeaderContainer>

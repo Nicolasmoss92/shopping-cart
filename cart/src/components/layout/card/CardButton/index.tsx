@@ -3,8 +3,21 @@ import Button from "../../../button/Button";
 import { CartIconWrapper } from "./styles";
 import { useCart } from "../../../../contexts/cartContext";
 
-const CardButton: React.FC = () => {
-  const { increment } = useCart();  // Usando o método increment do contexto
+type Product = {
+  id: number;
+  name: string;
+  price: string;
+  quantity: number;
+  imageUrl: string;
+};
+
+const CardButton: React.FC<{ product: Product }> = ({ product }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
 
   const icon = (
     <CartIconWrapper>
@@ -20,7 +33,7 @@ const CardButton: React.FC = () => {
       icon={icon}  // Passa o ícone
       primary={true}  // Define como botão primário (roxo)
       large={true}  // Define como botão grande
-      onClick={increment}  // Agora usamos o método increment do contexto
+      onClick={handleAddToCart}  // Agora usamos o método increment do contexto
     />
   );
 };

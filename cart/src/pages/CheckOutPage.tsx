@@ -13,9 +13,7 @@ const CheckoutPage: React.FC = () => {
                 <Header />
                 <MainContainerItensPage>
                     <SubHeader />
-                    <ProductItem />
-                    <ProductItem />
-                    <ProductItem />
+
                     <CheckoutSummary />
                 </MainContainerItensPage>
             </PageWrapper>
