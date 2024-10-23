@@ -1,23 +1,46 @@
-// /src/contexts/CartContext.tsx
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
-interface CartContextType {
+type Product = {
+  id: number;
+  name: string;
+  price: string;
   quantity: number;
-  increment: () => void;
-}
+  imageUrl: string;
+};
+
+type CartContextType = {
+  cart: Product[];
+  addToCart: (product: Product) => void;
+  totalItems: number;
+};
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [cart, setCart] = useState<Product[]>([]);
 
-  const increment = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
+  const addToCart = (product: Product) => {
+    setCart(prevCart => {
+      const existingProduct = prevCart.find(item => item.id === product.id);
+      const updatedCart = existingProduct
+        ? prevCart.map(item =>
+            item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          )
+        : [...prevCart, { ...product, quantity: 1 }];
+
+      // Logando o estado do carrinho após a adição
+      console.log("Carrinho atualizado:", updatedCart);
+
+      return updatedCart;
+    });
   };
-  console.log(increment)
 
+  const totalItems = cart.reduce((sum, product) => sum + product.quantity, 0);
+
+  // Logando o total de itens
+  console.log("Total de itens no carrinho:", totalItems);
   return (
-    <CartContext.Provider value={{ quantity, increment }}>
+    <CartContext.Provider value={{ cart, addToCart, totalItems }}>
       {children}
     </CartContext.Provider>
   );

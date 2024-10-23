@@ -10,13 +10,20 @@ interface CardProps {
 
 
 const Card: React.FC<CardProps> = ({imageUrl, productName, productPrice}) => {
+  const product = {
+    id: Math.random(),  // Pode ser algum ID real
+    name: productName,
+    price: productPrice,
+    quantity: 1,  // Inicialmente a quantidade será 1
+    imageUrl: imageUrl,
+  };
   return (
     <div>
       <ProductCard>
         <ProductImage src={imageUrl} alt={productName} />
         <ProductName>{productName}</ProductName>
         <ProductPrice>{productPrice}</ProductPrice>
-        <CardButton />
+        <CardButton product={product} />
       </ProductCard>
     </div>
   );
