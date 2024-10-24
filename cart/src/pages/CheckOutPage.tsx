@@ -13,29 +13,34 @@ import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
 //     // Adicione mais produtos conforme necessário
 //   ];
 
-  const CheckoutPage: React.FC = () => {
-    const { cart } = useCart();
+const CheckoutPage: React.FC = () => {
+    const { cart, totalItems } = useCart();
 
-      return (
-          <div>
-              <PageWrapper>
-                  <Header />
-                  <MainContainerItensPage>
-                      <SubHeader />
-                      {cart.map((product, index) => (
-                        <ProductItem
-                            key={product.id}
-                            image={product.imageUrl}
-                            name={product.name}
-                            price={product.price}
-                            quantity={product.quantity}
-                        />
-                    ))}
-                      <CheckoutSummary />
-                  </MainContainerItensPage>
-              </PageWrapper>
-          </div>
-      );
-  };
-  
-  export default CheckoutPage;
+    return (
+        <div>
+            <PageWrapper>
+                <Header />
+                <MainContainerItensPage>
+                    <SubHeader />
+                    {cart.length > 0 ? (
+                        cart.map((product) => (
+                            <ProductItem
+                                key={product.id}
+                                image={product.imageUrl}
+                                name={product.name}
+                                price={product.price}
+                                quantity={product.quantity}
+                            />
+                        ))
+                    ) : (
+                        <p>O carrinho está vazio.</p>
+                    )}
+                    <p>Total de itens: {totalItems}</p>
+                    <CheckoutSummary />
+                </MainContainerItensPage>
+            </PageWrapper>
+        </div>
+    );
+};
+
+export default CheckoutPage;
