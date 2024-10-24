@@ -16,7 +16,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ image, name, quantity, price 
         <ProductImage src={image} alt={name} />
         <ProductName>{name}</ProductName>
       </ProductInfo>
-      <QuantityControl />
+      <div>Quantity: {quantity}</div>
       <ProductPrice>
         <span>R${price}</span>
       </ProductPrice>

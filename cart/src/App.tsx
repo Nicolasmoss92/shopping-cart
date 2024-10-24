@@ -9,11 +9,15 @@ import Button from "./components/button/Button";
 import CardButton from "./components/layout/card/CardButton";
 import CardGridPage from "./pages/ListItensPage";
 import CheckoutButton from "./components/layout/checkOut/CheckOutButton";
+import { CartProvider } from "./contexts/cartContext";
 
 function App() {
   return (
-    <div className="App">  
-      <CardGridPage />
+    <div className="App">
+      <CartProvider>
+         <CheckoutPage />
+
+      </CartProvider>
     </div>
   );
 }
