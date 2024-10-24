@@ -10,13 +10,13 @@ import CardButton from "./components/layout/card/CardButton";
 import CardGridPage from "./pages/ListItensPage";
 import CheckoutButton from "./components/layout/checkOut/CheckOutButton";
 import { CartProvider } from "./contexts/cartContext";
+import { AppRoutes } from "./application/router";
 
 function App() {
   return (
     <div className="App">
       <CartProvider>
-         <CheckoutPage />
-
+        <AppRoutes />
       </CartProvider>
     </div>
   );
