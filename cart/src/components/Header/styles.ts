@@ -29,11 +29,20 @@ export const Logo = styled.div`
 
 export const CardStyle = styled.div`
   display: flex;
-  align-items: center;
-  color: white;
+  align-items: center; /* Align the items vertically in the center */
+  color: white; /* Text color */
 
-  img {
-    height: 24px;
-    margin-left: 10px;
+  div:first-child {
+    display: flex;
+    flex-direction: column; /* Stack "Meu carrinho" and "{totalItems} itens" */
+    margin-right: 8px; /* Space between the text and the cart icon */
+  }
+
+  div:last-child {
+    margin-left: 8px; /* Space between the icon and text, in case you need it */
+  }
+
+  span {
+    font-size: 14px; /* Adjust text size */
   }
 `;
