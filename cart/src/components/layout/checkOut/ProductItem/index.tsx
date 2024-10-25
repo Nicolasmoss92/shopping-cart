@@ -9,14 +9,14 @@ interface ProductItemProps {
   price: string;
 }
 
-const ProductItem: React.FC<ProductItemProps> = ({ image, name, quantity, price }) => {
+const ProductItem: React.FC<{ image: string, name: string, price: string, quantity: number, onIncrease: () => void, onDecrease: () => void }> = ({ image, name, price, quantity, onIncrease, onDecrease }) => {
   return (
     <ProductWrapper>
       <ProductInfo>
         <ProductImage src={image} alt={name} />
         <ProductName>{name}</ProductName>
       </ProductInfo>
-      <div>Quantity: {quantity}</div>
+      <QuantityControl quantity={quantity} onIncrease={onIncrease} onDecrease={onDecrease} />
       <ProductPrice>
         <span>R${price}</span>
       </ProductPrice>

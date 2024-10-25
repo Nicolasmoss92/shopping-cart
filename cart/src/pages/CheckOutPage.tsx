@@ -7,35 +7,47 @@ import { ProductWrapper, QuantityControl } from "../components/layout/checkOut/P
 import { CartProvider, useCart } from "../contexts/cartContext";
 import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
 
-// const products = [
-//     { image: '/tenis2.jpg', name: 'Tênis 1', price: 'R$100,00' },
-//     { image: '/tenis2.jpg', name: 'Tênis 2', price: 'R$150,00' },
-//     // Adicione mais produtos conforme necessário
-//   ];
+interface Product {
+    id: number; // Alterado de string para number
+    name: string;
+    price: string;
+    imageUrl: string;
+    quantity: number;
+}
 
-  const CheckoutPage: React.FC = () => {
-    const { cart } = useCart();
+const CheckoutPage: React.FC = () => {
+    const { cart, addToCart, removeFromCart } = useCart();
 
-      return (
-          <div>
-              <PageWrapper>
-                  <Header />
-                  <MainContainerItensPage>
-                      <SubHeader />
-                      {cart.map((product, index) => (
-                        <ProductItem
-                            key={product.id}
-                            image={product.imageUrl}
-                            name={product.name}
-                            price={product.price}
-                            quantity={product.quantity}
-                        />
-                    ))}
-                      <CheckoutSummary />
-                  </MainContainerItensPage>
-              </PageWrapper>
-          </div>
-      );
-  };
-  
-  export default CheckoutPage;
+    const handleIncrease = (product: Product) => {
+        addToCart(product);
+    };
+
+    const handleDecrease = (product: Product) => {
+        removeFromCart(product);
+    };
+
+    return (
+        <div>
+      <PageWrapper>
+        <Header />
+        <MainContainerItensPage>
+          <SubHeader />
+          {cart.length > 0 && cart.map((product) => (
+            <ProductItem
+              key={product.id}
+              image={product.imageUrl}
+              name={product.name}
+              price={product.price}
+              quantity={product.quantity}
+              onIncrease={() => handleIncrease(product)}
+              onDecrease={() => handleDecrease(product)}
+            />
+          ))}
+          <CheckoutSummary />
+        </MainContainerItensPage>
+      </PageWrapper>
+    </div>
+    );
+};
+
+export default CheckoutPage;
