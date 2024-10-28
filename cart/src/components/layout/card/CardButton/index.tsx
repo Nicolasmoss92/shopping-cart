@@ -1,7 +1,6 @@
-import { useState } from "react";
 import Button from "../../../button/Button";
 import { CartIconWrapper, ItemCount } from "./styles";
-import { useCart } from "../../../../contexts/cartContext";
+import { useCart } from "../../../../hooks/useCart";
 import { FaShoppingCart } from "react-icons/fa";
 
 type Product = {

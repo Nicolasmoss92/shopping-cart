@@ -1,4 +1,4 @@
-import { useCart } from "../../contexts/cartContext";
+import { useCart } from "../../hooks/useCart";
 import Card from "../layout/card/Card";
 import { CardStyle, HeaderContainer, HeaderContent, Logo } from "./styles";
 import { FaShoppingCart } from 'react-icons/fa';

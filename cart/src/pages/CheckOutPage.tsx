@@ -1,33 +1,24 @@
 import Header from "../components/Header";
-import CheckoutButton from "../components/layout/checkOut/CheckOutButton";
 import CheckoutSummary from "../components/layout/checkOut/CheckoutSummary";
 import SubHeader from "../components/layout/checkOut/Header";
 import ProductItem from "../components/layout/checkOut/ProductItem";
-import { ProductWrapper, QuantityControl } from "../components/layout/checkOut/ProductItem/styles";
-import { CartProvider, useCart } from "../contexts/cartContext";
+import { useCart } from "../hooks/useCart";
 import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
-
-interface Product {
-    id: number; // Alterado de string para number
-    name: string;
-    price: string;
-    imageUrl: string;
-    quantity: number;
-}
+import { Product } from "../types/product/productTypes";
 
 const CheckoutPage: React.FC = () => {
-    const { cart, addToCart, removeFromCart } = useCart();
+  const { cart, addToCart, removeFromCart } = useCart();
 
-    const handleIncrease = (product: Product) => {
-        addToCart(product);
-    };
+  const handleIncrease = (product: Product) => {
+    addToCart(product);
+  };
 
-    const handleDecrease = (product: Product) => {
-        removeFromCart(product);
-    };
+  const handleDecrease = (product: Product) => {
+    removeFromCart(product);
+  };
 
-    return (
-        <div>
+  return (
+    <div>
       <PageWrapper>
         <Header />
         <MainContainerItensPage>
@@ -47,7 +38,7 @@ const CheckoutPage: React.FC = () => {
         </MainContainerItensPage>
       </PageWrapper>
     </div>
-    );
+  );
 };
 
 export default CheckoutPage;

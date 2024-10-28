@@ -1,4 +1,4 @@
-import { useCart } from "../../../../contexts/cartContext";
+import { useCart } from "../../../../hooks/useCart";
 import CheckoutButton from "../CheckOutButton";
 import {SummaryWrapper, TotalText } from "./styles";
 
