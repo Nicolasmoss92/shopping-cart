@@ -5,11 +5,20 @@ import { ProductImage, ProductInfo, ProductName, ProductPrice, ProductWrapper } 
 interface ProductItemProps {
   image: string;
   name: string;
-  quantity: number;
   price: string;
+  quantity: number;
+  onIncrease: () => void;
+  onDecrease: () => void;
 }
 
-const ProductItem: React.FC<{ image: string, name: string, price: string, quantity: number, onIncrease: () => void, onDecrease: () => void }> = ({ image, name, price, quantity, onIncrease, onDecrease }) => {
+const ProductItem: React.FC<ProductItemProps> = ({
+  image,
+  name,
+  price,
+  quantity,
+  onIncrease,
+  onDecrease,
+}) => {
   return (
     <ProductWrapper>
       <ProductInfo>

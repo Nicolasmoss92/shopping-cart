@@ -1,5 +1,4 @@
 import CardButton from "../CardButton";
-import CartButton from "../CardButton";
 import { ProductCard, ProductImage, ProductName, ProductPrice } from "./styles";
 
 interface CardProps {
@@ -14,7 +13,7 @@ const Card: React.FC<CardProps> = ({imageUrl, productName, productPrice}) => {
     id: Math.random(),  // Pode ser algum ID real
     name: productName,
     price: productPrice,
-    quantity: 1,  // Inicialmente a quantidade será 1
+    quantity: 0,  // Inicialmente a quantidade será 1
     imageUrl: imageUrl,
   };
   return (

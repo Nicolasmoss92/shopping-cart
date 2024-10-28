@@ -1,7 +1,7 @@
-import { useState } from "react";
 import Button from "../../../button/Button";
-import { CartIconWrapper } from "./styles";
-import { useCart } from "../../../../contexts/cartContext";
+import { CartIconWrapper, ItemCount } from "./styles";
+import { useCart } from "../../../../hooks/useCart";
+import { FaShoppingCart } from "react-icons/fa";
 
 type Product = {
   id: number;
@@ -12,17 +12,22 @@ type Product = {
 };
 
 const CardButton: React.FC<{ product: Product }> = ({ product }) => {
-  const { addToCart } = useCart();
+  const { cart, addToCart } = useCart();
 
+  // Verifica se o produto já está no carrinho e obtém sua quantidade
+  const productInCart = cart.find((item) => item.id === product.id);
+  const quantity = productInCart ? productInCart.quantity : 0;
+
+  // Função para adicionar ao carrinho
   const handleAddToCart = () => {
     addToCart(product);
   };
 
-
+  // Ícone do carrinho com o contador de itens específicos daquele produto
   const icon = (
     <CartIconWrapper>
-      <img src='./Vector.jpg' alt="Carrinho" />
-      {/* O número de itens aqui será gerenciado no Header, então não precisa exibir neste componente */}
+      <FaShoppingCart size={24} data-testid="shopping-cart-icon" />
+      {quantity > 0 && <ItemCount>{quantity}</ItemCount>} {/* Exibe a quantidade se for maior que 0 */}
     </CartIconWrapper>
   );
 
@@ -31,9 +36,9 @@ const CardButton: React.FC<{ product: Product }> = ({ product }) => {
       title="ADICIONAR AO CARRINHO"  // Texto do botão
       showIcon={true}  // Indica que o ícone deve ser mostrado
       icon={icon}  // Passa o ícone
-      primary={true}  // Define como botão primário (roxo)
+      primary={true}  // Define como botão primário
       large={true}  // Define como botão grande
-      onClick={handleAddToCart}  // Agora usamos o método increment do contexto
+      onClick={handleAddToCart}  // Chama a função de adicionar ao carrinho
     />
   );
 };
