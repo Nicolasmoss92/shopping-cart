@@ -28,7 +28,6 @@ export const MainContainerCheckOutPage = styled.main`
   box-sizing: border-box; /* Inclui padding na largura total */
 `;
 
-// CardGrid - Grid responsivo para os cards
 export const CardGrid = styled.div`
   background-color: black; /* Cor de fundo para o body */
   display: flex;
@@ -38,7 +37,6 @@ export const CardGrid = styled.div`
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  margin-top: 0px;
 
   /* Para telas grandes */
   @media (min-width: 1024px) {
