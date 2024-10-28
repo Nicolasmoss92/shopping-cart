@@ -9,11 +9,11 @@ interface QuantityControlProps {
 const QuantityControl: React.FC<QuantityControlProps> = ({ quantity, onIncrease, onDecrease }) => {
   return (
     <QuantityWrapper>
-      <Button onClick={onIncrease}>
+      <Button aria-label="increase quantity"onClick={onIncrease}>
         +
       </Button>
       <QuantityDisplay>{quantity}</QuantityDisplay> {/* Exibindo a quantidade dinamicamente */}
-      <RemoveButton onClick={onDecrease}>
+      <RemoveButton aria-label="decrease quantity" onClick={onDecrease}>
         -
       </RemoveButton>
     </QuantityWrapper>

@@ -1,14 +1,24 @@
-import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import SubHeader from '.';
+import { render, screen } from "@testing-library/react";
+import SubHeader from ".";
 
-describe('SubHeader Component', () => {
-    test('renders product header labels correctly', () => {
-        render(<SubHeader />);
+describe("SubHeader Component", () => {
+  beforeEach(() => {
+    render(<SubHeader />);
+  });
 
-        // Verifica se os textos "Produto", "QTD" e "Preço" estão presentes
-        expect(screen.getByText('Produto')).toBeInTheDocument();
-        expect(screen.getByText('QTD')).toBeInTheDocument();
-        expect(screen.getByText('Preço')).toBeInTheDocument();
-    });
+  test("renders 'Produto' text", () => {
+    const produtoElement = screen.getByText("Produto");
+    expect(produtoElement).toBeInTheDocument();
+  });
+
+  test("renders 'QTD' text", () => {
+    const qtdElement = screen.getByText("QTD");
+    expect(qtdElement).toBeInTheDocument();
+  });
+
+  test("renders 'Preço' text", () => {
+    const precoElement = screen.getByText("Preço");
+    expect(precoElement).toBeInTheDocument();
+  });
 });

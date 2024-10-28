@@ -6,8 +6,6 @@ export const ProductWrapper = styled.div`
   grid-template-columns: 1fr 0.5fr 0.5fr;
   align-items: center;
   padding: 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   width: 100%;  /* Para ocupar toda a largura disponível */
   max-width: 1400px; /* Mantenha o max-width */
   margin: 0 auto;
