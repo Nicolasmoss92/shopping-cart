@@ -15,11 +15,11 @@ const Header: React.FC = () => {
         </Logo>
         <CardStyle>
           <div>
-            <span>Meu carrinho</span>
-            <span>Itens {totalItems}</span>
+            <span className="title">Meu carrinho</span>
+            <span className="items">{totalItems} itens</span>
           </div>
           <div>
-            <FaShoppingCart size={24} data-testid="shopping-cart-icon" />
+            <FaShoppingCart size={30} data-testid="shopping-cart-icon" />
           </div>
         </CardStyle>
       </HeaderContent>

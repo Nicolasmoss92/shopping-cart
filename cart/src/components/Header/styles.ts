@@ -29,20 +29,29 @@ export const Logo = styled.div`
 
 export const CardStyle = styled.div`
   display: flex;
-  align-items: center; /* Align the items vertically in the center */
-  color: white; /* Text color */
+  align-items: center;
+  color: white;
 
   div:first-child {
     display: flex;
-    flex-direction: column; /* Stack "Meu carrinho" and "{totalItems} itens" */
-    margin-right: 8px; /* Space between the text and the cart icon */
+    flex-direction: column;
+    margin-right: 8px;
   }
 
-  div:last-child {
-    margin-left: 8px; /* Space between the icon and text, in case you need it */
+  .title {
+    font-size: 18px; /* Aumente o tamanho do título */
+    font-weight: bold; /* Coloque o texto em negrito */
+    color: white; /* Cor branca para destaque */
   }
 
-  span {
-    font-size: 14px; /* Adjust text size */
+  .items {
+    font-size: 12px; /* Diminua o tamanho do texto para o número de itens */
+    color: #a3a3a3; /* Use um cinza claro */
+    right: 0; /* Posiciona o texto à direita da div */
+  }
+
+  svg {
+    margin-left: 8px; /* Espaço entre o texto e o ícone */
+    color: white; /* Ajuste a cor do ícone se necessário */
   }
 `;

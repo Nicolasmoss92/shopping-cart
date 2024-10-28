@@ -27,7 +27,7 @@ const CardButton: React.FC<{ product: Product }> = ({ product }) => {
   const icon = (
     <CartIconWrapper>
       <FaShoppingCart size={24} data-testid="shopping-cart-icon" />
-      {quantity > 0 && <ItemCount>{quantity}</ItemCount>} {/* Exibe a quantidade se for maior que 0 */}
+      <ItemCount>{quantity}</ItemCount> {/* Sempre exibe a quantidade */}
     </CartIconWrapper>
   );
 
