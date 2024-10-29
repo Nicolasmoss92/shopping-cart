@@ -17,7 +17,7 @@ describe('QuantityControl Component', () => {
   });
 
   test('displays the correct quantity', () => {
-    const quantityDisplay = screen.getByText('2');
+    const quantityDisplay = screen.getByDisplayValue('2'); // Usar getByDisplayValue para inputs
     expect(quantityDisplay).toBeInTheDocument();
   });
 

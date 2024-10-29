@@ -1,6 +1,6 @@
 import Header from "../components/Header";
-import CheckoutSummary from "../components/layout/checkOut/CheckoutSummary";
-import SubHeader from "../components/layout/checkOut/Header";
+import CheckoutSummary from "../components/layout/checkOut/CheckOutSummary";
+import SubHeader from "../components/layout/checkOut/SubHeader";
 import ProductItem from "../components/layout/checkOut/ProductItem";
 import { useCart } from "../hooks/useCart";
 import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";

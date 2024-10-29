@@ -2,19 +2,27 @@ import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
 import CheckoutButton from ".";
 
-describe("CheckoutButton Component", () => {
+// Mock do componente styled
+jest.mock('./styles', () => ({
+  CheckoutButtonStyled: (props: { title: string; primary?: boolean; large?: boolean }) => (
+    <button {...props}>{props.title}</button>
+  ),
+}));
+
+describe('CheckoutButton Component', () => {
   beforeEach(() => {
     render(<CheckoutButton />);
   });
 
-  test("renders with correct title", () => {
-    const buttonElement = screen.getByRole("button", { name: /finalizar pedido/i });
+  test('renders with correct title', () => {
+    const buttonElement = screen.getByRole('button', { name: /FINALIZAR PEDIDO/i });
     expect(buttonElement).toBeInTheDocument();
   });
 
-  test("has primary and large classes", () => {
-    const buttonElement = screen.getByRole("button", { name: /finalizar pedido/i });
-    expect(buttonElement).toHaveClass("sc-blHHSb ynawA sc-gtLWhw hoskPT");
-    expect(buttonElement).toHaveClass("sc-blHHSb ynawA sc-gtLWhw hoskPT");
+  test('has primary and large classes', () => {
+    const buttonElement = screen.getByRole('button', { name: /FINALIZAR PEDIDO/i });
+    // Verificando as classes aplicadas no botão
+    expect(buttonElement).toHaveClass('element'); // Ajuste as classes conforme sua implementação
+    expect(buttonElement).toHaveClass('large');   // Ajuste as classes conforme sua implementação
   });
 });

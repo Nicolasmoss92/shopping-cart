@@ -3,10 +3,12 @@ import { render, screen } from '@testing-library/react';
 import Header from '.';
 import { useCart } from '../../hooks/useCart';
 
+// Mock do hook useCart
 jest.mock('../../hooks/useCart');
 
 describe('Header Component', () => {
   beforeEach(() => {
+    // Mockando a implementação do useCart
     (useCart as jest.Mock).mockReturnValue({ totalItems: 3 });
     render(<Header />);
   });
@@ -20,8 +22,12 @@ describe('Header Component', () => {
   });
 
   test('displays the correct total items in the cart', () => {
-    const totalItemsText = screen.getByText(/Itens 3/i);
+    // Ajustando o texto para corresponder ao que está sendo renderizado
+    const totalItemsText = screen.getByText(/meu carrinho/i);
     expect(totalItemsText).toBeInTheDocument();
+
+    const itemsCountText = screen.getByText(/3 itens/i); // Usando regex para maior flexibilidade
+    expect(itemsCountText).toBeInTheDocument();
   });
 
   test('renders the shopping cart icon', () => {

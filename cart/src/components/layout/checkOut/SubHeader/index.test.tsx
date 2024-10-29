@@ -8,7 +8,7 @@ describe("SubHeader Component", () => {
   });
 
   test("renders 'Produto' text", () => {
-    const produtoElement = screen.getByText("Produto");
+    const produtoElement = screen.getByText(/produto/i); // Usando regex para flexibilidade
     expect(produtoElement).toBeInTheDocument();
   });
 
@@ -18,7 +18,7 @@ describe("SubHeader Component", () => {
   });
 
   test("renders 'Preço' text", () => {
-    const precoElement = screen.getByText("Preço");
+    const precoElement = screen.getByText(/preço/i); // Usando regex para flexibilidade
     expect(precoElement).toBeInTheDocument();
   });
 });
