@@ -10,14 +10,18 @@ const Header: React.FC = () => {
     <HeaderContainer>
       <HeaderContent>
         <Logo>
-          <img src="/ROCKETSHOES.png" alt="Rocketshoes Logo" />
-          <img src="/tenis.png" alt="Additional Logo" className="tenis-logo" />
+          <a href="/itens" className="carrinho-link">
+            <img src="/ROCKETSHOES.png" alt="Rocketshoes Logo" />
+            <img src="/tenis.png" alt="Additional Logo" className="tenis-logo" />
+          </a>
         </Logo>
         <CardStyle>
-          <div>
-            <span className="title">Meu carrinho</span>
-            <span className="items">{totalItems} itens</span>
-          </div>
+          <a href="/checkout" className="carrinho-link">
+            <div>
+              <span className="title">Meu carrinho</span>
+              <span className="items">{totalItems} itens</span>
+            </div>
+          </a>
           <div>
             <FaShoppingCart size={30} data-testid="shopping-cart-icon" />
           </div>
