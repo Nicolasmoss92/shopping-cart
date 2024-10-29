@@ -10,8 +10,8 @@ const Header: React.FC = () => {
     <HeaderContainer>
       <HeaderContent>
         <Logo>
-          <img src="/ROCKETSHOES.jpg" alt="Rocketshoes Logo" />
-          <img src="/noun_Running_1473810.jpg" alt="Additional Logo" />
+          <img src="/ROCKETSHOES.png" alt="Rocketshoes Logo" />
+          <img src="/tenis.png" alt="Additional Logo" className="tenis-logo" />
         </Logo>
         <CardStyle>
           <div>

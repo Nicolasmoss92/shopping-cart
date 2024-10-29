@@ -1,6 +1,6 @@
 import React from 'react';
 import QuantityControl from '../QuantityItem/index';
-import { ProductImage, ProductInfo, ProductName, ProductPrice, ProductWrapper, QuantityButton, QuantityInput } from "./styles";
+import { ProductImage, ProductInfo, ProductName, ProductPrice, ProductWrapper } from "./styles";
 
 interface ProductItemProps {
   image: string;
@@ -34,7 +34,9 @@ const ProductItem: React.FC<ProductItemProps> = ({
         onDecrease={onDecrease}
       />
       <ProductPrice>
-        <span>{`R$${(parseFloat(price.replace('R$', '').replace(',', '.')) * quantity).toFixed(2)}`}</span>
+        <span>{`R$${(parseFloat(price.replace('R$', '').replace(',', '.')) * quantity)
+          .toFixed(2)
+          .replace('.', ',')}`}</span>
       </ProductPrice>
     </ProductWrapper>
   );

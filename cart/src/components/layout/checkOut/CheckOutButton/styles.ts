@@ -4,7 +4,7 @@ import Button from '../../../button/Button';
 
 // Estilo específico para o botão de checkout
 export const CheckoutButtonStyled = styled(Button)`
-  background-color: #7159c1; // Cor de fundo do botão
+  background: #7159C1; // Cor de fundo do botão
   color: #fff; // Cor do texto
   border: none; // Sem bordas
   border-radius: 4px; // Bordas arredondadas

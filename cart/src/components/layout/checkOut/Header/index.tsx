@@ -5,9 +5,9 @@ import { SubHeaderWrapper } from "./styles";
 const SubHeader: React.FC = () => {
     return (
       <SubHeaderWrapper>
-        <span>Produto</span>
+        <span>PRODUTO</span>
         <span>QTD</span>
-        <span>Preço</span>
+        <span>PREÇO</span>
       </SubHeaderWrapper>
     );
   };

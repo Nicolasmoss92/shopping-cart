@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
-// SubHeaderWrapper
 export const SubHeaderWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 0.5fr 0.5fr;  
+  grid-template-columns: 2fr 0fr 0fr; 
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 10rem;
+  padding: 1.5rem 0;
+  padding-left: 10.2rem;
+  padding-right: 4rem;
+  font-family: 'Roboto', sans-serif; 
+  color: #999999; 
   font-weight: bold;
-  border-bottom: 2px solid #eee;
-  padding: 10px 0;
-
-  span {
-    text-align: center;  
+  
+  /* Esconder em dispositivos menores */
+  @media (max-width: 600px) {
+    display: none;
   }
 `;
-
