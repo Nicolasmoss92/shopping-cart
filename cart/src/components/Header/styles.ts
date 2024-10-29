@@ -56,10 +56,10 @@ export const CardStyle = styled.div`
     margin-right: 8px;
   }
 
-  .carrinho-link {
+  .link {
   text-decoration: none;
   }
-  
+
   .title {
     font-size: 1.125rem; /* Tamanho do título em rem (18px) */
     font-weight: bold; /* Coloque o texto em negrito */
