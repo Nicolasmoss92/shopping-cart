@@ -1,6 +1,6 @@
 import React from 'react';
 import QuantityControl from '../QuantityItem/index';
-import { ProductImage, ProductInfo, ProductName, ProductPrice, ProductWrapper } from "./styles";
+import { ProductImage, ProductInfo, ProductName, ProductPrice, ProductWrapper, QuantityButton, QuantityInput } from "./styles";
 
 interface ProductItemProps {
   image: string;
@@ -23,13 +23,21 @@ const ProductItem: React.FC<ProductItemProps> = ({
     <ProductWrapper>
       <ProductInfo>
         <ProductImage src={image} alt={name} />
-        <ProductName>{name}</ProductName>
+        <div>
+          <ProductName>{name}</ProductName>
+          <span>{price}</span>
+        </div>
       </ProductInfo>
-      <QuantityControl quantity={quantity} onIncrease={onIncrease} onDecrease={onDecrease} />
+      <QuantityControl
+        quantity={quantity}
+        onIncrease={onIncrease}
+        onDecrease={onDecrease}
+      />
       <ProductPrice>
-        <span>R${price}</span>
+        <span>{`R$${(parseFloat(price.replace('R$', '').replace(',', '.')) * quantity).toFixed(2)}`}</span>
       </ProductPrice>
     </ProductWrapper>
   );
-}
+};
+
 export default ProductItem;

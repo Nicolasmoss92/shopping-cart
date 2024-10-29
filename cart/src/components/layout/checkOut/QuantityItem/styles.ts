@@ -1,34 +1,37 @@
 import styled from 'styled-components';
 
-export const QuantityWrapper = styled.div`
+export const QuantityControlWrapper = styled.div`
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 `;
 
-export const Button = styled.button`
-  background-color: transparent;
-  border: 1px solid #ccc; /* Cor do botão */
-  border-radius: 50%; /* Botão redondo */
-  width: 30px; /* Largura do botão */
-  height: 30px; /* Altura do botão */
+export const QuantityControl = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const QuantityButton = styled.button`
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
+  color: #333;
   cursor: pointer;
-  margin-right: 10px; /* Espaçamento entre o botão e o número */
-  
-  &:hover {
-    background-color: #f0f0f0; /* Cor ao passar o mouse */
-  }
 `;
 
-export const QuantityDisplay = styled.span`
-  font-size: 16px; /* Tamanho do texto */
-  font-weight: bold; /* Peso do texto */
-  margin: 0 10px; /* Espaçamento em volta do número */
-`;
-
-
-export const RemoveButton = styled(Button)`
-  border: 1px solid #8B5A5A; /* Cor do botão de remover */
+export const QuantityInput = styled.input`
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.25rem;
+  font-size: 1rem;
+  color: #333;
 `;

@@ -1,4 +1,4 @@
-import { Button, QuantityDisplay, QuantityWrapper, RemoveButton } from "./styles";
+import {  QuantityButton, QuantityControlWrapper, QuantityInput } from "./styles";
 
 interface QuantityControlProps {
   quantity: number;
@@ -8,15 +8,11 @@ interface QuantityControlProps {
 
 const QuantityControl: React.FC<QuantityControlProps> = ({ quantity, onIncrease, onDecrease }) => {
   return (
-    <QuantityWrapper>
-      <Button aria-label="increase quantity"onClick={onIncrease}>
-        +
-      </Button>
-      <QuantityDisplay>{quantity}</QuantityDisplay> {/* Exibindo a quantidade dinamicamente */}
-      <RemoveButton aria-label="decrease quantity" onClick={onDecrease}>
-        -
-      </RemoveButton>
-    </QuantityWrapper>
+    <QuantityControlWrapper>
+      <QuantityButton onClick={onIncrease}>+</QuantityButton>
+      <QuantityInput type="text" value={quantity} readOnly />
+      <QuantityButton onClick={onDecrease}>-</QuantityButton>
+    </QuantityControlWrapper>
   );
 };
 
