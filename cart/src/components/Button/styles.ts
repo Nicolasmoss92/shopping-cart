@@ -5,7 +5,7 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7159c1;  // Fundo roxo se for primary
+  background-color: #7159c1;  
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -17,7 +17,7 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   height: 45px;
 
   &:hover {
-    background-color: #9a7fd1  // Muda o fundo ao hover
+    background-color: #9a7fd1;
   }
 
   span {
