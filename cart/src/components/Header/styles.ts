@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: #1a1a1a;
+  background-color: black;
   padding: 1rem 0;
 
   @media (max-width: 768px) {

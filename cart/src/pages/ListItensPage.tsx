@@ -1,11 +1,5 @@
 import Header from "../components/Header";
 import Card from "../components/layout/card/Card";
-import Cart from "../components/layout/card/Card";
-import { ProductCard } from "../components/layout/card/Card/styles";
-import CheckoutSummary from "../components/layout/checkOut/CheckOutSummary";
-import SubHeader from "../components/layout/checkOut/SubHeader";
-import ProductItem from "../components/layout/checkOut/ProductItem";
-import { ProductWrapper, QuantityControl } from "../components/layout/checkOut/ProductItem/styles";
 import { CartProvider } from "../contexts/cartContext";
 import { CardGrid, MainContainerCheckOutPage, PageWrapper } from "../styles/globalStyles";
 const products = [
@@ -21,21 +15,28 @@ const products = [
 const CardGridPage: React.FC = () => {
   return (
     <CartProvider>
-    <PageWrapper>
-      <Header />
-      <MainContainerCheckOutPage>
-      <CardGrid>
-        {products.map((product, index) => (
-          <Card 
-            key={index} 
-            imageUrl={product.imageUrl} 
-            productName={product.productName} 
-            productPrice={product.productPrice} 
-          />
-        ))}
-      </CardGrid>
-      </MainContainerCheckOutPage>
-    </PageWrapper>
+      <PageWrapper>
+        <Header 
+          logoSrc="/ROCKETSHOES.png" 
+          additionalLogoSrc="/tenis.png" 
+          cartTitle="Meu Carrinho" 
+          itemsLink="/itens" 
+          checkoutLink="/checkout" 
+          showCartIcon={true}
+        />
+        <MainContainerCheckOutPage>
+          <CardGrid>
+            {products.map((product, index) => (
+              <Card 
+                key={index} 
+                imageUrl={product.imageUrl} 
+                productName={product.productName} 
+                productPrice={product.productPrice} 
+              />
+            ))}
+          </CardGrid>
+        </MainContainerCheckOutPage>
+      </PageWrapper>
     </CartProvider>
   );
 };
