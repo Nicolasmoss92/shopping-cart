@@ -5,7 +5,8 @@ import ProductItem from "../components/layout/checkOut/ProductItem";
 import { useCart } from "../hooks/useCart";
 import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
 import { Product } from "../types/product/productTypes";
-
+import logoSrc from '../assets/images/ROCKETSHOES.png';
+import additionalLogoSrc from '../assets/images/tenis.png';
 
 const CheckoutPage: React.FC = () => {
   const { cart, addToCart, removeFromCart } = useCart();
@@ -22,8 +23,8 @@ const CheckoutPage: React.FC = () => {
     <div>
       <PageWrapper>
       <Header 
-          logoSrc="/ROCKETSHOES.png" 
-          additionalLogoSrc="/tenis.png" 
+          logoSrc={logoSrc}
+          additionalLogoSrc={additionalLogoSrc}
           cartTitle="Meu Carrinho" 
           itemsLink="/itens" 
           checkoutLink="/checkout" 
