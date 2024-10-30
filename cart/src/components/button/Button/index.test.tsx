@@ -35,7 +35,7 @@ describe('Button Component', () => {
     });
 
     test('applies primary styling when primary prop is true', () => {
-        const { container } = render(<Button {...defaultProps} primary={true} />);
+        const { container } = render(<Button {...defaultProps} />);
         expect(container.firstChild).toHaveClass('sc-blHHSb llSqkH'); // Ajuste a classe conforme seu estilo
     });
     

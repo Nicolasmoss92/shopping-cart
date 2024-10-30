@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   background-color: #1a1a1a;
-  padding: 1rem 0; /* Usando rem para melhor responsividade */
+  padding: 1rem 0;
 
   @media (max-width: 768px) {
-    padding: 0.5rem 0; /* Reduz o padding em telas menores */
+    padding: 0.5rem 0;
   }
 `;
 
