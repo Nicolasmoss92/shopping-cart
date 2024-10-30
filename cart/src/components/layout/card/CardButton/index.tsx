@@ -1,4 +1,4 @@
-import Button from "../../../button/Button";
+import Button from "../../../Button";
 import { CartIconWrapper, ItemCount } from "./styles";
 import { useCart } from "../../../../hooks/useCart";
 import { FaShoppingCart } from "react-icons/fa";
