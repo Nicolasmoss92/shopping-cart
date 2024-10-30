@@ -14,31 +14,24 @@ type Product = {
 const CardButton: React.FC<{ product: Product }> = ({ product }) => {
   const { cart, addToCart } = useCart();
 
-  // Verifica se o produto já está no carrinho e obtém sua quantidade
-  const productInCart = cart.find((item) => item.id === product.id);
-  const quantity = productInCart ? productInCart.quantity : 0;
+  const { quantity = 0 } = cart.find((item) => item.id === product.id) || {};
 
-  // Função para adicionar ao carrinho
   const handleAddToCart = () => {
     addToCart(product);
   };
 
-  // Ícone do carrinho com o contador de itens específicos daquele produto
-  const icon = (
-    <CartIconWrapper>
-      <FaShoppingCart size={24} data-testid="shopping-cart-icon" />
-      <ItemCount>{quantity}</ItemCount> {/* Sempre exibe a quantidade */}
-    </CartIconWrapper>
-  );
-
   return (
     <Button
-      title="ADICIONAR AO CARRINHO"  // Texto do botão
-      showIcon={true}  // Indica que o ícone deve ser mostrado
-      icon={icon}  // Passa o ícone
-      primary={true}  // Define como botão primário
-      large={true}  // Define como botão grande
-      onClick={handleAddToCart}  // Chama a função de adicionar ao carrinho
+      title="ADICIONAR AO CARRINHO"
+      showIcon={true}
+      icon={
+        <CartIconWrapper>
+          <FaShoppingCart size={24} data-testid="shopping-cart-icon" />
+          <ItemCount>{quantity}</ItemCount>
+        </CartIconWrapper>
+      }
+      large={true}
+      onClick={handleAddToCart}
     />
   );
 };

@@ -1,10 +1,11 @@
 import Header from "../components/Header";
-import CheckoutSummary from "../components/layout/checkOut/CheckoutSummary";
-import SubHeader from "../components/layout/checkOut/Header";
+import CheckoutSummary from "../components/layout/checkOut/CheckOutSummary";
+import SubHeader from "../components/layout/checkOut/SubHeader";
 import ProductItem from "../components/layout/checkOut/ProductItem";
 import { useCart } from "../hooks/useCart";
 import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
 import { Product } from "../types/product/productTypes";
+
 
 const CheckoutPage: React.FC = () => {
   const { cart, addToCart, removeFromCart } = useCart();
@@ -20,7 +21,14 @@ const CheckoutPage: React.FC = () => {
   return (
     <div>
       <PageWrapper>
-        <Header />
+      <Header 
+          logoSrc="/ROCKETSHOES.png" 
+          additionalLogoSrc="/tenis.png" 
+          cartTitle="Meu Carrinho" 
+          itemsLink="/itens" 
+          checkoutLink="/checkout" 
+          showCartIcon={false}
+        />
         <MainContainerItensPage>
           <SubHeader />
           {cart.length > 0 && cart.map((product) => (

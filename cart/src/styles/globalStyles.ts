@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const MainContainerItensPage = styled.main`
   background-color: white; /* Cor de fundo para o body */
   padding: 2rem; /* Usando rem para melhor responsividade */
-  min-height: 100vh;
   display: flex;
   flex-direction: column; /* Alinha itens verticalmente */
   justify-content: flex-start; /* Alinha ao topo */
@@ -12,6 +11,8 @@ export const MainContainerItensPage = styled.main`
   max-width: 1080px; /* Limita a largura máxima */
   margin: 0 auto; /* Centraliza o container */
   box-sizing: border-box; /* Inclui padding na largura total */
+  border-radius: 1rem; /* Adiciona bordas arredondadas */
+  overflow: hidden; 
 
   /* Media queries para responsividade */
   @media (max-width: 1024px) {

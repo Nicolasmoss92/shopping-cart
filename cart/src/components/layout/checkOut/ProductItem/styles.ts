@@ -9,7 +9,7 @@ export const ProductWrapper = styled.div`
   border-bottom: 1px solid #eee; /* Divisor entre itens */
   padding-left: 1.8rem;
   padding-right: 3.9rem;
-  
+
   @media (max-width: 600px) {
     grid-template-columns: 1fr; /* Layout responsivo para dispositivos menores */
   }

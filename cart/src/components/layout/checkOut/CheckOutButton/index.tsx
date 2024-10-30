@@ -1,11 +1,10 @@
-import { CheckoutButtonStyled } from "./styles";
+import Button from "../../../button/Button";
 
 const CheckoutButton: React.FC = () => {
     return (
-      <CheckoutButtonStyled
+      <Button
         title="FINALIZAR PEDIDO"
-        primary={true}  // Define como botão primário
-        large={true}    // Define como botão grande
+        large={false}
       />
     );
   };

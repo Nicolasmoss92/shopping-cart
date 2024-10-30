@@ -1,27 +1,39 @@
+import { useMemo } from "react";
 import { useCart } from "../../../../hooks/useCart";
 import CheckoutButton from "../CheckOutButton";
 import { SummaryWrapper, TotalText } from "./styles";
+import { formatPrice } from "../../../../utils/checkOut/formatPrice";
 
-const CheckoutSummary: React.FC = () => {
-    const { cart } = useCart();  // Acessa o cart pelo contexto
+interface Product {
+    price: string; 
+    quantity: number;
+  }
+  
+  const CheckoutSummary: React.FC = () => {
+    const { cart } = useCart();
 
-    // Calcula o total com base no preço e quantidade de cada produto
-    const total = cart.reduce((acc, product) => {
-        const priceNumber = parseFloat(product.price.replace('R$', '').replace('.', ','));
+    const total = useMemo(() => {
+      return cart.reduce((acc, product: Product) => {
+        const priceNumber = parseFloat(product.price.replace('R$', '').replace('.', '').replace(',', '.'));
         return acc + (priceNumber * product.quantity);
-    }, 0).toFixed(2);
-
-    const formattedTotal = total.replace('.', ',');
-
+      }, 0);
+    }, [cart]);
+  
     return (
-        <SummaryWrapper>
-            <CheckoutButton />
-            <TotalText>
-                <span className="label">TOTAL</span>
-                <span className="value">R${formattedTotal}</span>
-            </TotalText>
-        </SummaryWrapper>
+      <SummaryWrapper>
+        <CheckoutButton />
+        {total > 0 ? (
+          <TotalText>
+            <span className="label">TOTAL</span>
+            <span className="value">{formatPrice(total)}</span>
+          </TotalText>
+        ) : (
+          <TotalText>
+            <span className="label">Carrinho vazio</span>
+          </TotalText>
+        )}
+      </SummaryWrapper>
     );
-};
-
-export default CheckoutSummary;
+  };
+  
+  export default CheckoutSummary;
