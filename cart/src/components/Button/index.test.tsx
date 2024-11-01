@@ -7,7 +7,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 jest.mock('react-icons/fa', () => ({
     FaShoppingCart: () => <span data-testid="shopping-cart-icon" />,
   }));
-
+  
 describe('Button Component', () => {
     const defaultProps = {
         title: 'Click Me',

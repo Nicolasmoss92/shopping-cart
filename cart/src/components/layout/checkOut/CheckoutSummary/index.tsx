@@ -9,7 +9,7 @@ interface Product {
     quantity: number;
   }
   
-  const CheckoutSummary: React.FC = () => {
+  const CheckoutSummary: React.FC<Product> = () => {
     const { cart } = useCart();
 
     const total = useMemo(() => {

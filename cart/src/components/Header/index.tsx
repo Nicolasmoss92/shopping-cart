@@ -4,7 +4,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 interface HeaderProps {
   logoSrc: string;                 
-  additionalLogoSrc?: string;      
+  additionalLogoSrc: string;      
   cartTitle: string;             
   itemsLink: string;            
   checkoutLink: string;  
