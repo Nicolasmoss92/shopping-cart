@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import CheckoutSummary from "../components/layout/checkOut/CheckOutSummary";
 import SubHeader from "../components/layout/checkOut/SubHeader";
 import ProductItem from "../components/layout/checkOut/ProductItem";
 import { useCart } from "../hooks/useCart";
@@ -7,6 +6,7 @@ import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
 import { Product } from "../types/product/productTypes";
 import logoSrc from '../assets/images/ROCKETSHOES.png';
 import additionalLogoSrc from '../assets/images/tenis.png';
+import CheckoutSummary from "../components/layout/checkOut/CheckOutSummary";
 
 const CheckoutPage: React.FC = () => {
   const { cart, addToCart, removeFromCart } = useCart();
