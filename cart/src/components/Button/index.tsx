@@ -9,7 +9,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const Button: React.FC<ButtonProps> = ({ title, showIcon, large, onClick, icon, ...props }) => {
   return (
-    <StyledButton large={large} onClick={onClick} {...props}>
+    <StyledButton $large={large} onClick={onClick} {...props}>
       {showIcon && icon}
       {title}
     </StyledButton>

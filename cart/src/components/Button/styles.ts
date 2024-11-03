@@ -9,11 +9,11 @@ export const StyledButton = styled.button<ButtonStyleProps>`
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: ${(props) => (props.large ? '18px 24px' : '8px 16px')}; 
+  padding: ${props => props.$large ? '18px 24px' : '8px 16px'}; 
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
-  width: ${(props) => (props.large ? '300px' : '200px')};  
+  width: ${({ $large }) => ($large ? '300px' : '200px')};   
   height: 45px;
 
   &:hover {

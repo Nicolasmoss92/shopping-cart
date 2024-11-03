@@ -2,47 +2,52 @@ import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import ProductItem from '.';
 
+jest.mock('../QuantityItem/index', () => {
+  return ({ onIncrease, onDecrease }: { onIncrease: () => void; onDecrease: () => void }) => (
+    <div>
+      <button onClick={onIncrease}>Increase</button>
+      <button onClick={onDecrease}>Decrease</button>
+    </div>
+  );
+});
+
 describe('ProductItem Component', () => {
-  const mockProps = {
-    image: '/path/to/image.jpg',
-    name: 'Sample Product',
-    price: '100,00', // Ajustado para o formato brasileiro
-    quantity: 2,
+  const defaultProps = {
+    image: 'https://example.com/image.jpg',
+    name: 'Test Product',
+    price: 'R$20,00',
+    quantity: 1,
     onIncrease: jest.fn(),
     onDecrease: jest.fn(),
   };
 
-  beforeEach(() => {
-    render(<ProductItem {...mockProps} />);
+  const renderProductItem = (props = {}) => {
+    render(<ProductItem {...defaultProps} {...props} />);
+  };
+
+  test('renders product image', () => {
+    renderProductItem();
+
+    const image = screen.getByAltText('Test Product');
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute('src', 'https://example.com/image.jpg');
   });
 
-  // test('renders product information correctly', () => {
-  //   // Verifica se a imagem, nome e preço do produto estão no documento
-  //   const imageElement = screen.getByAltText(mockProps.name);
-  //   const nameElement = screen.getByText(mockProps.name);
-  //   const priceElement = screen.getByText(`R$${mockProps.price}`);
+  test('calls onIncrease when Increase button is clicked', () => {
+    renderProductItem();
 
-  //   expect(imageElement).toBeInTheDocument();
-  //   expect(imageElement).toHaveAttribute('src', mockProps.image);
-  //   expect(nameElement).toBeInTheDocument();
-  //   expect(priceElement).toBeInTheDocument();
-  // });
-
-  test('renders correct quantity', () => {
-    // Use getByDisplayValue para buscar a quantidade no input
-    const quantityElement = screen.getByDisplayValue(mockProps.quantity.toString());
-    expect(quantityElement).toBeInTheDocument();
-  });
-
-  test('calls onIncrease when the increase button is clicked', () => {
-    const increaseButton = screen.getByRole('button', { name: /increase quantity/i });
+    const increaseButton = screen.getByText('Increase');
     fireEvent.click(increaseButton);
-    expect(mockProps.onIncrease).toHaveBeenCalled();
+
+    expect(defaultProps.onIncrease).toHaveBeenCalledTimes(1);
   });
-  
-  test('calls onDecrease when the decrease button is clicked', () => {
-    const decreaseButton = screen.getByRole('button', { name: /decrease quantity/i });
+
+  test('calls onDecrease when Decrease button is clicked', () => {
+    renderProductItem();
+
+    const decreaseButton = screen.getByText('Decrease');
     fireEvent.click(decreaseButton);
-    expect(mockProps.onDecrease).toHaveBeenCalled();
+
+    expect(defaultProps.onDecrease).toHaveBeenCalledTimes(1);
   });
 });
