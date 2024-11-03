@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProductWrapper = styled.div`
+export const ProductWrapper = styled.section`
   display: grid;
   grid-template-columns: 2fr 0fr 0fr; /* Aloca espaço para os três blocos: imagem + nome, contador, preço */
   align-items: center;

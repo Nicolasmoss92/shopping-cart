@@ -52,7 +52,7 @@ export const MainContainerCheckOutPage = styled.main`
   }
 `;
 
-export const CardGrid = styled.div`
+export const CardGrid = styled.section`
   background-color: black; /* Cor de fundo preta */
   display: flex;
   flex-wrap: wrap; /* Permite que os cards quebrem linha */
