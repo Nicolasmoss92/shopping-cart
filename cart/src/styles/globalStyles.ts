@@ -30,7 +30,7 @@ export const MainContainerItensPage = styled.main`
 
 
 // Body (Amarelo) - container principal
-export const MainContainerCheckOutPage = styled.main`
+export const MainContainerCheckoutPage = styled.main`
   background-color: black; /* Cor de fundo para o body */
   padding: 2rem; /* Usando rem para responsividade */
   min-height: 100vh;
