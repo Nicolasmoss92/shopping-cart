@@ -1,31 +1,57 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-import CheckoutSummary from '.';
-import { useCart } from '../../../../hooks/useCart';
+import CheckoutSummary from ".";
+import { useCart } from "../../../../hooks/useCart";
+import { render, screen  } from '@testing-library/react';
 
-// Mock do hook useCart
-jest.mock('../../../../hooks/useCart');
+jest.mock('../../../../hooks/usecart');
 
-describe('CheckoutSummary Component', () => {
-  beforeEach(() => {
-    (useCart as jest.Mock).mockReturnValue({
-      cart: [
-        { price: 'R$ 100,00', quantity: 2 },
-        { price: 'R$ 50,00', quantity: 1 },
-      ],
-    });
-    render(<CheckoutSummary />);
-  });
+describe('', () => {
+    const mockUseCart = useCart as jest.Mock;
+    
+    const renderButton = (props = {}) => {
+        render(<CheckoutSummary  {...props} />);
+    };
 
-  test('displays the correct total', () => {
-    const totalText = screen.getByText(/TOTAL/i);
-    const totalValue = screen.getByText(/R\$ ?250,00/i); // Regex para permitir espaços
-    expect(totalText).toBeInTheDocument();
-    expect(totalValue).toBeInTheDocument();
-  });
+    beforeEach(() => {
+        jest.clearAllMocks();
+    })
 
-  test('renders CheckoutButton', () => {
-    const checkoutButton = screen.getByRole('button', { name: /FINALIZAR PEDIDO/i }); // Ajuste se necessário
-    expect(checkoutButton).toBeInTheDocument();
-  });
-});
+    test('renders "Carrinho vazio" when cart is empty', () => {
+        mockUseCart.mockReturnValue({ cart: [] });
+    
+        renderButton();
+        
+        expect(screen.getByText('Carrinho vazio')).toBeInTheDocument();
+      });
+
+      test('displays the total price when cart has items', () => {
+        mockUseCart.mockReturnValue({
+          cart: [
+            { price: 'R$10,00', quantity: 2 },
+            { price: 'R$20,00', quantity: 1 },
+          ]
+        });
+    
+        renderButton();
+        
+        // Verificar que o total está correto e formatado
+        expect(screen.getByText('TOTAL')).toBeInTheDocument();
+        expect(screen.getByText('R$40,00')).toBeInTheDocument();
+      });
+
+      test('calculates total price with multiple items correctly', () => {
+        mockUseCart.mockReturnValue({
+          cart: [
+            { price: 'R$15,00', quantity: 3 },
+            { price: 'R$25,00', quantity: 2 },
+            { price: 'R$5,00', quantity: 4 },
+          ]
+        });
+    
+        renderButton();
+    
+        expect(screen.getByText('TOTAL')).toBeInTheDocument();
+        expect(screen.getByText('R$115,00')).toBeInTheDocument();
+      });
+    
+})

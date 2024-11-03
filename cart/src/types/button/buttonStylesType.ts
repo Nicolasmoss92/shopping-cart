@@ -1,4 +1,4 @@
 export interface ButtonStyleProps {
   primary?: boolean;
-  large?: boolean;
+  $large?: boolean;
 }
