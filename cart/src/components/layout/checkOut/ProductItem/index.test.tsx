@@ -25,6 +25,10 @@ describe('ProductItem Component', () => {
     render(<ProductItem {...defaultProps} {...props} />);
   };
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  })
+
   test('renders product image', () => {
     renderProductItem();
 

@@ -14,7 +14,7 @@ jest.mock('../../hooks/useCart', () => ({
 
 describe('Header Component', () => {
     const defaultProps = {
-        logoSrc: 'test-file-stub',  // Agora o Jest simulará isso
+        logoSrc: 'test-file-stub', 
         additionalLogoSrc: 'test-file-stub',
         cartTitle: "Meu carrinho",
         itemsLink: '/items',
@@ -25,6 +25,10 @@ describe('Header Component', () => {
     const renderHeader = (props = {}) => {
         render(<Header {...defaultProps} {...props} />);
     };
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+    })
 
     test('renders the main logo', () => {
         renderHeader();

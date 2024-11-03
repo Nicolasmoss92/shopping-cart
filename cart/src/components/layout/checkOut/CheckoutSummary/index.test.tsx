@@ -5,7 +5,7 @@ import { render, screen  } from '@testing-library/react';
 
 jest.mock('../../../../hooks/usecart');
 
-describe('', () => {
+describe('CheckOutSummary Component', () => {
     const mockUseCart = useCart as jest.Mock;
     
     const renderButton = (props = {}) => {
@@ -33,8 +33,7 @@ describe('', () => {
         });
     
         renderButton();
-        
-        // Verificar que o total está correto e formatado
+
         expect(screen.getByText('TOTAL')).toBeInTheDocument();
         expect(screen.getByText('R$40,00')).toBeInTheDocument();
       });
@@ -53,5 +52,4 @@ describe('', () => {
         expect(screen.getByText('TOTAL')).toBeInTheDocument();
         expect(screen.getByText('R$115,00')).toBeInTheDocument();
       });
-    
 })
