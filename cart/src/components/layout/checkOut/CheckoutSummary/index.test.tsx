@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import CheckoutSummary from ".";
+import CheckOutSummary from ".";
 import { useCart } from "../../../../hooks/useCart";
 import { render, screen  } from '@testing-library/react';
 
@@ -9,7 +9,7 @@ describe('CheckOutSummary Component', () => {
     const mockUseCart = useCart as jest.Mock;
     
     const renderButton = (props = {}) => {
-        render(<CheckoutSummary  {...props} />);
+        render(<CheckOutSummary  {...props} />);
     };
 
     beforeEach(() => {

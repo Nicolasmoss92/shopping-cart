@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Card from "../components/layout/card/Card";
 import { CartProvider } from "../contexts/cartContext";
-import { CardGrid, MainContainerCheckOutPage, PageWrapper } from "../styles/globalStyles";
+import { CardGrid, MainContainerCheckoutPage, PageWrapper } from "../styles/globalStyles";
 import logoSrc from '../assets/images/ROCKETSHOES.png';
 import additionalLogoSrc from '../assets/images/tenis.png';
 const products = [
@@ -29,7 +29,7 @@ const CardGridPage: React.FC = () => {
           checkoutLink="/checkout" 
           showCartIcon={true}
         />
-        <MainContainerCheckOutPage>
+        <MainContainerCheckoutPage>
           <CardGrid>
             {products.map((product, index) => (
               <Card 
@@ -40,7 +40,7 @@ const CardGridPage: React.FC = () => {
               />
             ))}
           </CardGrid>
-        </MainContainerCheckOutPage>
+        </MainContainerCheckoutPage>
       </PageWrapper>
     </CartProvider>
   );
