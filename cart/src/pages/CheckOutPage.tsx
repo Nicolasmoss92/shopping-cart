@@ -6,9 +6,9 @@ import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
 import { Product } from "../types/product/productTypes";
 import logoSrc from '../assets/images/ROCKETSHOES.png';
 import additionalLogoSrc from '../assets/images/tenis.png';
-import CheckoutSummary from "../components/layout/checkOut/CheckOutSummary";
+import CheckOutSummary from "../components/layout/checkOut/CheckOutSummary";
 
-const CheckoutPage: React.FC = () => {
+const CheckOutPage: React.FC = () => {
   const { cart, addToCart, removeFromCart } = useCart();
 
   const handleIncrease = (product: Product) => {
@@ -43,11 +43,11 @@ const CheckoutPage: React.FC = () => {
               onDecrease={() => handleDecrease(product)}
             />
           ))}
-          <CheckoutSummary />
+          <CheckOutSummary />
         </MainContainerItensPage>
       </PageWrapper>
     </div>
   );
 };
 
-export default CheckoutPage;
+export default CheckOutPage;
