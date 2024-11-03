@@ -2,7 +2,6 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Card from '.';
 
-// Mock do CardButton para evitar execução de lógica não testada
 jest.mock('../CardButton', () => () => <button>Add to Cart</button>);
 
 describe('Card Component', () => {
@@ -16,8 +15,12 @@ describe('Card Component', () => {
     render(<Card {...defaultProps} {...props} />);
   };
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+  })
+
   test('renders card with valid props', () => {
-    renderCard(); // Apenas renderiza com os props padrão
+    renderCard();
     expect(screen.getByAltText("Test Product")).toBeInTheDocument();
     expect(screen.getByText("Test Product")).toBeInTheDocument();
     expect(screen.getByText("$10.00")).toBeInTheDocument();
