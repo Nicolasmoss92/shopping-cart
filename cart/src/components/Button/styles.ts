@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { ButtonStyleProps } from '../../types/button/buttonStylesType';
+
+interface ButtonStyleProps {
+  primary?: boolean;
+  $large?: boolean;
+}
 
 export const StyledButton = styled.button<ButtonStyleProps>`
   display: flex;
