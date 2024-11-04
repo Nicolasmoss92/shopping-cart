@@ -5,10 +5,10 @@ export const ProductCard = styled.div`
   border-radius: 8px;
   padding: 16px;
   text-align: center;
-  height: 442px;  /* Pode manter, mas se ajustar a altura da imagem também é importante */
+  height: 442px;  
   max-width: 300px;
-  margin-top: 0px; /* Distância do topo */
-  margin-left: 20px; /* Distância da esquerda */
+  margin-top: 0px; 
+  margin-left: 20px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,10 +23,10 @@ export const ProductCard = styled.div`
 `;
 
 export const ProductImage = styled.img`
-  width: 100%; /* Use 100% para que a imagem preencha a largura do card */
-  height: auto; /* Mantém a proporção da imagem */
-  max-height: 260px; /* Define uma altura máxima */
-  object-fit: cover; /* Para manter a proporção e cobrir o espaço */
+  width: 100%; 
+  height: auto; 
+  max-height: 260px; 
+  object-fit: cover; 
   border-radius: 4px;
   margin-bottom: 16px; 
 `;
