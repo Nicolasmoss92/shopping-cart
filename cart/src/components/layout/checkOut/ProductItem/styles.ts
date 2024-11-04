@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 export const ProductWrapper = styled.section`
   display: grid;
-  grid-template-columns: 2fr 0fr 0fr; /* Aloca espaço para os três blocos: imagem + nome, contador, preço */
+  grid-template-columns: 2fr 0fr 0fr; 
   align-items: center;
   gap: 5rem;
   padding: 2rem 0;
-  border-bottom: 1px solid #eee; /* Divisor entre itens */
+  border-bottom: 1px solid #eee; 
   padding-left: 1.8rem;
   padding-right: 3.9rem;
 
   @media (max-width: 600px) {
-    grid-template-columns: 1fr; /* Layout responsivo para dispositivos menores */
+    grid-template-columns: 1fr;
   }
 `;
 

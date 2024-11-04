@@ -12,7 +12,6 @@ export const SubHeaderWrapper = styled.div`
   color: #999999; 
   font-weight: bold;
   
-  /* Esconder em dispositivos menores */
   @media (max-width: 600px) {
     display: none;
   }
