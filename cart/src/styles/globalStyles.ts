@@ -1,97 +1,91 @@
 import styled from 'styled-components';
 
-// Body (Amarelo) - container principal
 export const MainContainerItensPage = styled.main`
-  background-color: white; /* Cor de fundo para o body */
-  padding: 2rem; /* Usando rem para melhor responsividade */
+  background-color: white;
+  padding: 2rem;
   display: flex;
-  flex-direction: column; /* Alinha itens verticalmente */
-  justify-content: flex-start; /* Alinha ao topo */
-  width: 100%; /* Garante que ocupe toda a largura da tela */
-  max-width: 1080px; /* Limita a largura máxima */
-  margin: 0 auto; /* Centraliza o container */
-  box-sizing: border-box; /* Inclui padding na largura total */
-  border-radius: 1rem; /* Adiciona bordas arredondadas */
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%; 
+  max-width: 1080px;
+  margin: 0 auto; 
+  box-sizing: border-box; 
+  border-radius: 0.3rem; 
   overflow: hidden; 
 
-  /* Media queries para responsividade */
   @media (max-width: 1024px) {
-    padding: 1.5rem; /* Ajusta o padding para telas de tablet */
+    padding: 1.5rem; 
   }
 
   @media (max-width: 768px) {
-    padding: 1rem; /* Reduz o padding em telas menores */
+    padding: 1rem; 
   }
 
   @media (max-width: 480px) {
-    padding: 0.5rem; /* Mais ajuste para telas pequenas */
+    padding: 0.5rem;
   }
 `;
 
 
-// Body (Amarelo) - container principal
 export const MainContainerCheckoutPage = styled.main`
-  background-color: black; /* Cor de fundo para o body */
-  padding: 2rem; /* Usando rem para responsividade */
+  background-color: black; 
+  padding: 2rem; 
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Alinha ao topo */
-  width: 100%; /* Garante que ocupe toda a largura da tela */
-  max-width: 1200px; /* Limita a largura máxima */
-  margin: 0 auto; /* Centraliza o container */
-  box-sizing: border-box; /* Inclui padding na largura total */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; 
+  box-sizing: border-box; 
 
-  /* Media queries para responsividade */
   @media (max-width: 768px) {
-    padding: 1rem; /* Reduz o padding em telas menores */
+    padding: 1rem; 
   }
 
   @media (max-width: 480px) {
-    padding: 0.5rem; /* Mais ajuste para telas pequenas */
+    padding: 0.5rem;
   }
 `;
 
 export const CardGrid = styled.section`
-  background-color: black; /* Cor de fundo preta */
+  background-color: black; 
   display: flex;
-  flex-wrap: wrap; /* Permite que os cards quebrem linha */
+  flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 20px; /* Espaçamento entre os cards */
+  gap: 20px;
   width: 100%;
-  padding: 20px; /* Usando rem para melhor responsividade */
+  padding: 20px;
   box-sizing: border-box;
 
-  /* Media queries para responsividade */
+  
   @media (max-width: 768px) {
-    justify-content: center; /* Centraliza os cards em telas menores */
-    padding: 1rem; /* Reduz o padding em telas menores */
-    gap: 15px; /* Reduz o espaço entre os cards em telas menores */
+    justify-content: center;
+    padding: 1rem; 
+    gap: 15px; 
   }
 
   @media (max-width: 480px) {
-    padding: 0.5rem; /* Ajuste para telas pequenas */
-    gap: 10px; /* Ajusta o espaço entre os cards */
+    padding: 0.5rem;
+    gap: 10px;
   }
 
-  /* Para telas grandes */
   @media (min-width: 1024px) {
-    justify-content: space-between; /* Distribui os cards de forma uniforme */
+    justify-content: space-between;
   }
 `;
 
 export const PageWrapper = styled.div`
-  background-color: black; /* Cor de fundo preta */
-  min-height: 100vh; /* Para cobrir toda a altura da página */
-  padding: 2rem; /* Usando rem para melhor responsividade */
+  background-color: black;
+  min-height: 100vh; 
+  padding: 2rem; 
   box-sizing: border-box;
 
-  /* Media queries para responsividade */
   @media (max-width: 768px) {
-    padding: 1rem; /* Reduz o padding em telas menores */
+    padding: 1rem; 
   }
 
   @media (max-width: 480px) {
-    padding: 0.5rem; /* Mais ajuste para telas pequenas */
+    padding: 0.5rem;
   }
 `;
