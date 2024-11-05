@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { useCart } from "../../../../hooks/useCart";
-import CheckoutButton from "../CheckoutButton";
 import { SummaryWrapper, TotalText } from "./styles";
 import { formatPrice } from "../../../../utils/checkOut/formatPrice";
+import Button from "../../../Button";
 
 interface Product {
   price: string;
@@ -21,7 +21,10 @@ const CheckoutSummary: React.FC = () => {
 
   return (
     <SummaryWrapper>
-      <CheckoutButton />
+       <Button
+        title="FINALIZAR PEDIDO"
+        large={false}
+      />
       {total > 0 ? (
         <TotalText>
           <span className="label">TOTAL</span>
