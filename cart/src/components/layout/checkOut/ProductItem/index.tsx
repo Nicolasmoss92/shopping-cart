@@ -19,6 +19,11 @@ const ProductItem: React.FC<ProductItemProps> = ({
   onIncrease,
   onDecrease,
 }) => {
+
+  const totalPrice = `R$${(parseFloat(price.replace('R$', '').replace(',', '.')) * quantity)
+    .toFixed(2)
+    .replace('.', ',')}`
+
   return (
     <ProductWrapper>
       <ProductInfo>
@@ -34,9 +39,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
         onDecrease={onDecrease}
       />
       <ProductPrice>
-        <span>{`R$${(parseFloat(price.replace('R$', '').replace(',', '.')) * quantity)
-          .toFixed(2)
-          .replace('.', ',')}`}</span>
+        <span>{totalPrice}</span>
       </ProductPrice>
     </ProductWrapper>
   );

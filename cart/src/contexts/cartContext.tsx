@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Product } from '../types/product/productTypes';
-import { addProductToCart, removeProductFromCart } from '../utils/cart/cartUtils';
+import { addProductToCart, removeProductFromCart } from '../service/cart/cartUtils';
 
 type CartContextType = {
   cart: Product[];
