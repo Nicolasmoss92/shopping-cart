@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const ProductWrapper = styled.section`
   display: grid;
-  grid-template-columns: 2fr 0fr 0fr; 
+  grid-template-columns: 2fr 0fr 0fr;
   align-items: center;
   gap: 5rem;
   padding: 2rem 0;
-  border-bottom: 1px solid #eee; 
+  border-bottom: 1px solid #eee;
   padding-left: 1.8rem;
   padding-right: 3.9rem;
 
@@ -17,7 +17,7 @@ export const ProductWrapper = styled.section`
 
 export const ProductInfo = styled.div`
   display: flex;
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
   align-items: center;
@@ -33,14 +33,14 @@ export const ProductImage = styled.img`
 `;
 
 export const ProductName = styled.h3`
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 1.1rem;
   font-weight: 500;
 `;
 
 export const ProductPrice = styled.div`
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
   color: #000000;

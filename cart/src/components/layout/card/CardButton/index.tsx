@@ -1,7 +1,7 @@
-import Button from "../../../Button";
-import { CartIconWrapper, ItemCount } from "./styles";
-import { useCart } from "../../../../hooks/useCart";
-import { FaShoppingCart } from "react-icons/fa";
+import Button from '../../../Button';
+import { CartIconWrapper, ItemCount } from './styles';
+import { useCart } from '../../../../hooks/useCart';
+import { FaShoppingCart } from 'react-icons/fa';
 
 type Product = {
   id: number;

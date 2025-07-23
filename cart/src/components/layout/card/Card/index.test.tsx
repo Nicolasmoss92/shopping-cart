@@ -9,7 +9,7 @@ describe('Card Component', () => {
     imageUrl: 'test-file-stub',
     productName: 'Test Product',
     productPrice: '$10.00',
-  }
+  };
 
   const renderCard = (props = {}) => {
     render(<Card {...defaultProps} {...props} />);
@@ -17,20 +17,20 @@ describe('Card Component', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-  })
+  });
 
   test('renders card with valid props', () => {
     renderCard();
-    expect(screen.getByAltText("Test Product")).toBeInTheDocument();
-    expect(screen.getByText("Test Product")).toBeInTheDocument();
-    expect(screen.getByText("$10.00")).toBeInTheDocument();
+    expect(screen.getByAltText('Test Product')).toBeInTheDocument();
+    expect(screen.getByText('Test Product')).toBeInTheDocument();
+    expect(screen.getByText('$10.00')).toBeInTheDocument();
   });
 
   test('renders the product image', () => {
     renderCard();
-    const image = screen.getByAltText("Test Product");
+    const image = screen.getByAltText('Test Product');
     expect(image).toHaveAttribute('src', defaultProps.imageUrl);
-  });;
+  });
 
   test('renders the product name', () => {
     renderCard();

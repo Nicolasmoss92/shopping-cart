@@ -1,90 +1,89 @@
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from "@testing-library/react";
-import Button from ".";
+import { fireEvent, render, screen } from '@testing-library/react';
+import Button from '.';
 import { FaShoppingCart } from 'react-icons/fa';
 
-
 jest.mock('react-icons/fa', () => ({
-    FaShoppingCart: () => <span data-testid="shopping-cart-icon" />,
+  FaShoppingCart: () => <span data-testid="shopping-cart-icon" />,
 }));
 
 describe('Button Component', () => {
-    const defaultProps = {
-        title: 'Click Me',
-        onClick: jest.fn(),
-        icon: <FaShoppingCart />,
-        large: true
-    };
+  const defaultProps = {
+    title: 'Click Me',
+    onClick: jest.fn(),
+    icon: <FaShoppingCart />,
+    large: true,
+  };
 
-    const renderButton = (props = {}) => {
-        render(<Button {...defaultProps} {...props} />);
-    };
+  const renderButton = (props = {}) => {
+    render(<Button {...defaultProps} {...props} />);
+  };
 
-    beforeEach(() => {
-        jest.clearAllMocks();
-    })
-    
-    test('renders with title', () => {
-        renderButton();
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
-        const buttonElement = screen.getByText('Click Me');
+  test('renders with title', () => {
+    renderButton();
 
-        expect(buttonElement).toBeInTheDocument();
-    });
+    const buttonElement = screen.getByText('Click Me');
 
-    test('renders the icon when showIcon is true', () => {
-        renderButton({ showIcon: true, icon: <FaShoppingCart /> });
-        expect(screen.getByTestId('shopping-cart-icon')).toBeInTheDocument();
-    });
+    expect(buttonElement).toBeInTheDocument();
+  });
 
-    test('does not render the icon when showIcon is false', () => {
-        renderButton({ showIcon: false, icon: <FaShoppingCart /> });
-        expect(screen.queryByTestId('shopping-cart-icon')).not.toBeInTheDocument();
-    });
+  test('renders the icon when showIcon is true', () => {
+    renderButton({ showIcon: true, icon: <FaShoppingCart /> });
+    expect(screen.getByTestId('shopping-cart-icon')).toBeInTheDocument();
+  });
 
-    test('applies large styling when large prop is true', () => {
-        renderButton({ large: true });
+  test('does not render the icon when showIcon is false', () => {
+    renderButton({ showIcon: false, icon: <FaShoppingCart /> });
+    expect(screen.queryByTestId('shopping-cart-icon')).not.toBeInTheDocument();
+  });
 
-        const button = screen.getByText('Click Me');
+  test('applies large styling when large prop is true', () => {
+    renderButton({ large: true });
 
-        expect(button).toHaveStyle('padding: 18px 24px');
-        expect(button).toHaveStyle('width: 300px');
-    });
+    const button = screen.getByText('Click Me');
 
-    test('renders with small styling when large prop is false', () => {
-        renderButton({ large: false });
+    expect(button).toHaveStyle('padding: 18px 24px');
+    expect(button).toHaveStyle('width: 300px');
+  });
 
-        const button = screen.getByText('Click Me');
-        expect(button).toHaveStyle('padding: 8px 16px');
-        expect(button).toHaveStyle('width: 200px');
-    });
+  test('renders with small styling when large prop is false', () => {
+    renderButton({ large: false });
 
-    test('calls onClick function when clicked', () => {
-        renderButton();
+    const button = screen.getByText('Click Me');
+    expect(button).toHaveStyle('padding: 8px 16px');
+    expect(button).toHaveStyle('width: 200px');
+  });
 
-        const button = screen.getByText('Click Me');
+  test('calls onClick function when clicked', () => {
+    renderButton();
 
-        fireEvent.click(button);
-        expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
-    });
+    const button = screen.getByText('Click Me');
 
-    test('does not call onClick when button is disabled', () => {
-        renderButton({ disabled: true });
+    fireEvent.click(button);
+    expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
+  });
 
-        const button = screen.getByText('Click Me');
-        fireEvent.click(button);
+  test('does not call onClick when button is disabled', () => {
+    renderButton({ disabled: true });
 
-        expect(defaultProps.onClick).toHaveBeenCalledTimes(0);
-    });
+    const button = screen.getByText('Click Me');
+    fireEvent.click(button);
 
-    test('calls onClick multiple times when clicked repeatedly', () => {
-        renderButton();
+    expect(defaultProps.onClick).toHaveBeenCalledTimes(0);
+  });
 
-        const button = screen.getByText('Click Me');
+  test('calls onClick multiple times when clicked repeatedly', () => {
+    renderButton();
 
-        fireEvent.click(button);
-        fireEvent.click(button);
+    const button = screen.getByText('Click Me');
 
-        expect(defaultProps.onClick).toHaveBeenCalledTimes(2);
-    });
+    fireEvent.click(button);
+    fireEvent.click(button);
+
+    expect(defaultProps.onClick).toHaveBeenCalledTimes(2);
+  });
 });

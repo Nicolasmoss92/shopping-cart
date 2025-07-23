@@ -1,55 +1,55 @@
 import '@testing-library/jest-dom';
-import CheckOutSummary from ".";
-import { useCart } from "../../../../hooks/useCart";
-import { render, screen  } from '@testing-library/react';
+import CheckOutSummary from '.';
+import { useCart } from '../../../../hooks/useCart';
+import { render, screen } from '@testing-library/react';
 
 jest.mock('../../../../hooks/usecart');
 
 describe('CheckOutSummary Component', () => {
-    const mockUseCart = useCart as jest.Mock;
-    
-    const renderButton = (props = {}) => {
-        render(<CheckOutSummary  {...props} />);
-    };
+  const mockUseCart = useCart as jest.Mock;
 
-    beforeEach(() => {
-        jest.clearAllMocks();
-    })
+  const renderButton = (props = {}) => {
+    render(<CheckOutSummary {...props} />);
+  };
 
-    test('renders "Carrinho vazio" when cart is empty', () => {
-        mockUseCart.mockReturnValue({ cart: [] });
-    
-        renderButton();
-        
-        expect(screen.getByText('Carrinho vazio')).toBeInTheDocument();
-      });
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
-      test('displays the total price when cart has items', () => {
-        mockUseCart.mockReturnValue({
-          cart: [
-            { price: 'R$10,00', quantity: 2 },
-            { price: 'R$20,00', quantity: 1 },
-          ]
-        });
-    
-        renderButton();
+  test('renders "Carrinho vazio" when cart is empty', () => {
+    mockUseCart.mockReturnValue({ cart: [] });
 
-        expect(screen.getByText('TOTAL')).toBeInTheDocument();
-        expect(screen.getByText('R$40,00')).toBeInTheDocument();
-      });
+    renderButton();
 
-      test('calculates total price with multiple items correctly', () => {
-        mockUseCart.mockReturnValue({
-          cart: [
-            { price: 'R$15,00', quantity: 3 },
-            { price: 'R$25,00', quantity: 2 },
-            { price: 'R$5,00', quantity: 4 },
-          ]
-        });
-    
-        renderButton();
-    
-        expect(screen.getByText('TOTAL')).toBeInTheDocument();
-        expect(screen.getByText('R$115,00')).toBeInTheDocument();
-      });
-})
+    expect(screen.getByText('Carrinho vazio')).toBeInTheDocument();
+  });
+
+  test('displays the total price when cart has items', () => {
+    mockUseCart.mockReturnValue({
+      cart: [
+        { price: 'R$10,00', quantity: 2 },
+        { price: 'R$20,00', quantity: 1 },
+      ],
+    });
+
+    renderButton();
+
+    expect(screen.getByText('TOTAL')).toBeInTheDocument();
+    expect(screen.getByText('R$40,00')).toBeInTheDocument();
+  });
+
+  test('calculates total price with multiple items correctly', () => {
+    mockUseCart.mockReturnValue({
+      cart: [
+        { price: 'R$15,00', quantity: 3 },
+        { price: 'R$25,00', quantity: 2 },
+        { price: 'R$5,00', quantity: 4 },
+      ],
+    });
+
+    renderButton();
+
+    expect(screen.getByText('TOTAL')).toBeInTheDocument();
+    expect(screen.getByText('R$115,00')).toBeInTheDocument();
+  });
+});

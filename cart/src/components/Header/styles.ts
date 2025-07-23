@@ -57,11 +57,11 @@ export const CardStyle = styled.div`
   }
 
   .link {
-  text-decoration: none;
+    text-decoration: none;
   }
 
   .title {
-    font-size: 1.125rem; 
+    font-size: 1.125rem;
     font-weight: bold;
     color: white;
 
@@ -99,4 +99,3 @@ export const CartNumber = styled.span`
     display: block;
   }
 `;
-

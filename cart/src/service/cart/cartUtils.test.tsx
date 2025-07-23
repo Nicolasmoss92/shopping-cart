@@ -2,7 +2,13 @@ import { Product } from '../../types/product/productTypes';
 import { addProductToCart, removeProductFromCart } from '../cart/cartUtils';
 
 describe('Cart Utilities', () => {
-  const defaultProduct: Product = { id: 1, name: 'Test Product', price: '10.00', quantity: 1, imageUrl: 'test-url' };
+  const defaultProduct: Product = {
+    id: 1,
+    name: 'Test Product',
+    price: '10.00',
+    quantity: 1,
+    imageUrl: 'test-url',
+  };
 
   describe('addProductToCart', () => {
     it('should add a new product to the cart', () => {
@@ -32,7 +38,15 @@ describe('Cart Utilities', () => {
     });
 
     it('should return the same cart if product does not exist', () => {
-      const initialCart: Product[] = [{ id: 2, name: 'Another Product', price: '20.00', quantity: 1, imageUrl: 'another-url' }];
+      const initialCart: Product[] = [
+        {
+          id: 2,
+          name: 'Another Product',
+          price: '20.00',
+          quantity: 1,
+          imageUrl: 'another-url',
+        },
+      ];
       const updatedCart = removeProductFromCart(initialCart, defaultProduct);
       expect(updatedCart).toEqual(initialCart);
     });

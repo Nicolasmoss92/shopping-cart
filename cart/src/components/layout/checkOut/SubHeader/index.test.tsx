@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
-import { render, screen } from "@testing-library/react";
-import SubHeader from ".";
+import { render, screen } from '@testing-library/react';
+import SubHeader from '.';
 
-describe("SubHeader Component", () => {
+describe('SubHeader Component', () => {
   beforeEach(() => {
     render(<SubHeader />);
   });
@@ -13,7 +13,7 @@ describe("SubHeader Component", () => {
   });
 
   test("renders 'QTD' text", () => {
-    const qtdElement = screen.getByText("QTD");
+    const qtdElement = screen.getByText('QTD');
     expect(qtdElement).toBeInTheDocument();
   });
 

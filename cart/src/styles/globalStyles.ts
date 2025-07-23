@@ -6,19 +6,19 @@ export const MainContainerItensPage = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100%; 
+  width: 100%;
   max-width: 1080px;
-  margin: 0 auto; 
-  box-sizing: border-box; 
-  border-radius: 0.3rem; 
-  overflow: hidden; 
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
-    padding: 1.5rem; 
+    padding: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    padding: 1rem; 
+    padding: 1rem;
   }
 
   @media (max-width: 480px) {
@@ -26,21 +26,20 @@ export const MainContainerItensPage = styled.main`
   }
 `;
 
-
 export const MainContainerCheckoutPage = styled.main`
-  background-color: black; 
-  padding: 2rem; 
+  background-color: black;
+  padding: 2rem;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; 
-  box-sizing: border-box; 
+  margin: 0 auto;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 1rem; 
+    padding: 1rem;
   }
 
   @media (max-width: 480px) {
@@ -49,7 +48,7 @@ export const MainContainerCheckoutPage = styled.main`
 `;
 
 export const CardGrid = styled.section`
-  background-color: black; 
+  background-color: black;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -58,11 +57,10 @@ export const CardGrid = styled.section`
   padding: 20px;
   box-sizing: border-box;
 
-  
   @media (max-width: 768px) {
     justify-content: center;
-    padding: 1rem; 
-    gap: 15px; 
+    padding: 1rem;
+    gap: 15px;
   }
 
   @media (max-width: 480px) {
@@ -77,12 +75,12 @@ export const CardGrid = styled.section`
 
 export const PageWrapper = styled.div`
   background-color: black;
-  min-height: 100vh; 
-  padding: 2rem; 
+  min-height: 100vh;
+  padding: 2rem;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 1rem; 
+    padding: 1rem;
   }
 
   @media (max-width: 480px) {

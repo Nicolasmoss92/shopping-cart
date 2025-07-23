@@ -1,12 +1,12 @@
-import Header from "../components/Header";
-import SubHeader from "../components/layout/checkOut/SubHeader";
-import ProductItem from "../components/layout/checkOut/ProductItem";
-import { useCart } from "../hooks/useCart";
-import { MainContainerItensPage, PageWrapper } from "../styles/globalStyles";
-import { Product } from "../types/product/productTypes";
+import Header from '../components/Header';
+import SubHeader from '../components/layout/checkOut/SubHeader';
+import ProductItem from '../components/layout/checkOut/ProductItem';
+import { useCart } from '../hooks/useCart';
+import { MainContainerItensPage, PageWrapper } from '../styles/globalStyles';
+import { Product } from '../types/product/productTypes';
 import logoSrc from '../assets/images/ROCKETSHOES.png';
 import additionalLogoSrc from '../assets/images/tenis.png';
-import CheckoutSummary from "../components/layout/checkOut/CheckoutSummary";
+import CheckoutSummary from '../components/layout/checkOut/CheckoutSummary';
 
 const CheckoutPage: React.FC = () => {
   const { cart, addToCart, removeFromCart } = useCart();
@@ -22,27 +22,28 @@ const CheckoutPage: React.FC = () => {
   return (
     <div>
       <PageWrapper>
-      <Header 
+        <Header
           logoSrc={logoSrc}
           additionalLogoSrc={additionalLogoSrc}
-          cartTitle="Meu Carrinho" 
-          itemsLink="/itens" 
-          checkoutLink="/checkout" 
+          cartTitle="Meu Carrinho"
+          itemsLink="/itens"
+          checkoutLink="/checkout"
           showCartIcon={false}
         />
         <MainContainerItensPage>
           <SubHeader />
-          {cart.length > 0 && cart.map((product) => (
-            <ProductItem
-              key={product.id}
-              image={product.imageUrl}
-              name={product.name}
-              price={product.price}
-              quantity={product.quantity}
-              onIncrease={() => handleIncrease(product)}
-              onDecrease={() => handleDecrease(product)}
-            />
-          ))}
+          {cart.length > 0 &&
+            cart.map((product) => (
+              <ProductItem
+                key={product.id}
+                image={product.imageUrl}
+                name={product.name}
+                price={product.price}
+                quantity={product.quantity}
+                onIncrease={() => handleIncrease(product)}
+                onDecrease={() => handleDecrease(product)}
+              />
+            ))}
           <CheckoutSummary />
         </MainContainerItensPage>
       </PageWrapper>
