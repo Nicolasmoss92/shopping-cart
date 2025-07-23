@@ -1,8 +1,8 @@
-import { useMemo } from "react";
-import { useCart } from "../../../../hooks/useCart";
-import { SummaryWrapper, TotalText } from "./styles";
-import { formatPrice } from "../../../../utils/checkOut/formatPrice";
-import Button from "../../../Button";
+import { useMemo } from 'react';
+import { useCart } from '../../../../hooks/useCart';
+import { SummaryWrapper, TotalText } from './styles';
+import { formatPrice } from '../../../../utils/checkOut/formatPrice';
+import Button from '../../../Button';
 
 interface Product {
   price: string;
@@ -14,17 +14,16 @@ const CheckoutSummary: React.FC = () => {
 
   const total = useMemo(() => {
     return cart.reduce((acc, product: Product) => {
-      const priceNumber = parseFloat(product.price.replace('R$', '').replace('.', '').replace(',', '.'));
-      return acc + (priceNumber * product.quantity);
+      const priceNumber = parseFloat(
+        product.price.replace('R$', '').replace('.', '').replace(',', '.'),
+      );
+      return acc + priceNumber * product.quantity;
     }, 0);
   }, [cart]);
 
   return (
     <SummaryWrapper>
-       <Button
-        title="FINALIZAR PEDIDO"
-        large={false}
-      />
+      <Button title="FINALIZAR PEDIDO" large={false} />
       {total > 0 ? (
         <TotalText>
           <span className="label">TOTAL</span>

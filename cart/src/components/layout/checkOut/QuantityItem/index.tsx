@@ -1,4 +1,8 @@
-import {  QuantityButton, QuantityControlWrapper, QuantityInput } from "./styles";
+import {
+  QuantityButton,
+  QuantityControlWrapper,
+  QuantityInput,
+} from './styles';
 
 interface QuantityControlProps {
   quantity: number;
@@ -6,12 +10,20 @@ interface QuantityControlProps {
   onDecrease: () => void;
 }
 
-const QuantityControl: React.FC<QuantityControlProps> = ({ quantity, onIncrease, onDecrease }) => {
+const QuantityControl: React.FC<QuantityControlProps> = ({
+  quantity,
+  onIncrease,
+  onDecrease,
+}) => {
   return (
     <QuantityControlWrapper>
-      <QuantityButton onClick={onIncrease} aria-label="increase quantity">+</QuantityButton>
+      <QuantityButton onClick={onIncrease} aria-label="increase quantity">
+        +
+      </QuantityButton>
       <QuantityInput type="text" value={quantity} readOnly />
-      <QuantityButton onClick={onDecrease} aria-label="decrease quantity">-</QuantityButton>
+      <QuantityButton onClick={onDecrease} aria-label="decrease quantity">
+        -
+      </QuantityButton>
     </QuantityControlWrapper>
   );
 };

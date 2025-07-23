@@ -1,26 +1,37 @@
-import { useCart } from "../../hooks/useCart";
-import { CardStyle, HeaderContainer, HeaderContent, Logo } from "./styles";
+import { useCart } from '../../hooks/useCart';
+import { CardStyle, HeaderContainer, HeaderContent, Logo } from './styles';
 import { FaShoppingCart } from 'react-icons/fa';
 
 interface HeaderProps {
-  logoSrc: string;                 
-  additionalLogoSrc: string;      
-  cartTitle: string;             
-  itemsLink: string;            
-  checkoutLink: string;  
-  showCartIcon?: boolean;    
+  logoSrc: string;
+  additionalLogoSrc: string;
+  cartTitle: string;
+  itemsLink: string;
+  checkoutLink: string;
+  showCartIcon?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ logoSrc, additionalLogoSrc, cartTitle = "Meu carrinho", itemsLink, checkoutLink, showCartIcon }) => {
+const Header: React.FC<HeaderProps> = ({
+  logoSrc,
+  additionalLogoSrc,
+  cartTitle = 'Meu carrinho',
+  itemsLink,
+  checkoutLink,
+  showCartIcon,
+}) => {
   const { totalItems } = useCart();
 
   return (
     <HeaderContainer>
       <HeaderContent>
-      <Logo>
+        <Logo>
           <a href={itemsLink} className="link">
             <img src={logoSrc} alt="Logo Principal" />
-            <img src={additionalLogoSrc} alt="Logo Adicional" className="tenis-logo" />
+            <img
+              src={additionalLogoSrc}
+              alt="Logo Adicional"
+              className="tenis-logo"
+            />
           </a>
         </Logo>
         <CardStyle>

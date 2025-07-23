@@ -12,7 +12,7 @@ describe('QuantityControl Component', () => {
         quantity={2}
         onIncrease={mockIncrease}
         onDecrease={mockDecrease}
-      />
+      />,
     );
   });
 
@@ -22,13 +22,17 @@ describe('QuantityControl Component', () => {
   });
 
   test('calls onIncrease when the increase button is clicked', () => {
-    const increaseButton = screen.getByRole('button', { name: /increase quantity/i });
+    const increaseButton = screen.getByRole('button', {
+      name: /increase quantity/i,
+    });
     fireEvent.click(increaseButton);
     expect(mockIncrease).toHaveBeenCalled();
   });
 
   test('calls onDecrease when the decrease button is clicked', () => {
-    const decreaseButton = screen.getByRole('button', { name: /decrease quantity/i });
+    const decreaseButton = screen.getByRole('button', {
+      name: /decrease quantity/i,
+    });
     fireEvent.click(decreaseButton);
     expect(mockDecrease).toHaveBeenCalled();
   });

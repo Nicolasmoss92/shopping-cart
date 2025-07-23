@@ -3,7 +3,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import ProductItem from '.';
 
 jest.mock('../QuantityItem/index', () => {
-  return ({ onIncrease, onDecrease }: { onIncrease: () => void; onDecrease: () => void }) => (
+  return ({
+    onIncrease,
+    onDecrease,
+  }: {
+    onIncrease: () => void;
+    onDecrease: () => void;
+  }) => (
     <div>
       <button onClick={onIncrease}>Increase</button>
       <button onClick={onDecrease}>Decrease</button>
@@ -27,7 +33,7 @@ describe('ProductItem Component', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-  })
+  });
 
   test('renders product image', () => {
     renderProductItem();

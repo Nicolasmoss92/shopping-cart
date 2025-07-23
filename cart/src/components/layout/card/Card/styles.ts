@@ -5,10 +5,10 @@ export const ProductCard = styled.div`
   border-radius: 8px;
   padding: 16px;
   text-align: center;
-  height: 442px;  
+  height: 442px;
   max-width: 300px;
-  margin-top: 0px; 
-  margin-left: 20px; 
+  margin-top: 0px;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,19 +23,19 @@ export const ProductCard = styled.div`
 `;
 
 export const ProductImage = styled.img`
-  width: 100%; 
-  height: auto; 
-  max-height: 260px; 
-  object-fit: cover; 
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
   border-radius: 4px;
-  margin-bottom: 16px; 
+  margin-bottom: 16px;
 `;
 
 export const ProductName = styled.h3`
-  font-size: 16px; 
+  font-size: 16px;
   margin: 8px 0;
   color: #333;
-  text-align: left; 
+  text-align: left;
 `;
 
 export const ProductPrice = styled.p`
@@ -44,7 +44,7 @@ export const ProductPrice = styled.p`
   margin-bottom: 8px;
   color: #000;
   text-align: left;
-  margin-top: 0px 
+  margin-top: 0px;
 `;
 
 export const AddToCartButton = styled.button`
@@ -59,7 +59,7 @@ export const AddToCartButton = styled.button`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 100%; 
+  width: 100%;
 
   &:hover {
     background-color: #5a47a3;

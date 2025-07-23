@@ -1,5 +1,5 @@
-import CardButton from "../CardButton";
-import { ProductCard, ProductImage, ProductName, ProductPrice } from "./styles";
+import CardButton from '../CardButton';
+import { ProductCard, ProductImage, ProductName, ProductPrice } from './styles';
 
 interface CardProps {
   imageUrl: string;
@@ -7,8 +7,7 @@ interface CardProps {
   productPrice: string;
 }
 
-
-const Card: React.FC<CardProps> = ({imageUrl, productName, productPrice}) => {
+const Card: React.FC<CardProps> = ({ imageUrl, productName, productPrice }) => {
   const product = {
     id: Math.random(),
     name: productName,
